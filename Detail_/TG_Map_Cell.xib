@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TG_Map_Cell" id="wX3-7p-UCN">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXI-g6-buO">
+                        <rect key="frame" x="10" y="4" width="140" height="140"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                <point key="value" x="0.5" y="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="0.59999999999999998"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="11" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book_cover" translatesAutoresizingMaskIntoConstraints="NO" id="YMd-pE-Gfq">
+                        <rect key="frame" x="10" y="4" width="140" height="140"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="112" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4z1-A9-f4q">
+                        <rect key="frame" x="5" y="147" width="150" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="qFh-W5-102"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onA-w3-bM5">
+                        <rect key="frame" x="5" y="170" width="150" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="mjz-Ag-eb3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" tag="999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="player" translatesAutoresizingMaskIntoConstraints="NO" id="7sD-4b-Mh2">
+                        <rect key="frame" x="61" y="53" width="38" height="38"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="YMd-pE-Gfq" firstAttribute="leading" secondItem="wX3-7p-UCN" secondAttribute="leading" constant="10" id="0Zf-9G-6bG"/>
+                <constraint firstItem="onA-w3-bM5" firstAttribute="leading" secondItem="wX3-7p-UCN" secondAttribute="leading" constant="5" id="96P-VT-zZ0"/>
+                <constraint firstItem="YMd-pE-Gfq" firstAttribute="top" secondItem="wX3-7p-UCN" secondAttribute="top" constant="4" id="CCg-OI-sBv"/>
+                <constraint firstAttribute="bottom" secondItem="4z1-A9-f4q" secondAttribute="bottom" constant="28" id="CeH-lj-oxV"/>
+                <constraint firstItem="uXI-g6-buO" firstAttribute="leading" secondItem="wX3-7p-UCN" secondAttribute="leading" constant="10" id="JIs-h8-nYu"/>
+                <constraint firstAttribute="bottom" secondItem="onA-w3-bM5" secondAttribute="bottom" constant="5" id="JNC-b0-S5m"/>
+                <constraint firstItem="uXI-g6-buO" firstAttribute="top" secondItem="wX3-7p-UCN" secondAttribute="top" constant="4" id="K9p-yC-Dl8"/>
+                <constraint firstAttribute="trailing" secondItem="uXI-g6-buO" secondAttribute="trailing" constant="10" id="Zba-V2-qvY"/>
+                <constraint firstAttribute="trailing" secondItem="onA-w3-bM5" secondAttribute="trailing" constant="5" id="eMo-95-1iR"/>
+                <constraint firstAttribute="trailing" secondItem="YMd-pE-Gfq" secondAttribute="trailing" constant="10" id="hHD-v5-hFP"/>
+                <constraint firstItem="4z1-A9-f4q" firstAttribute="top" secondItem="uXI-g6-buO" secondAttribute="bottom" constant="3" id="ij0-EP-pSK"/>
+                <constraint firstItem="4z1-A9-f4q" firstAttribute="leading" secondItem="wX3-7p-UCN" secondAttribute="leading" constant="5" id="nRf-Bo-0Ie"/>
+                <constraint firstAttribute="trailing" secondItem="4z1-A9-f4q" secondAttribute="trailing" constant="5" id="uWY-QL-hV1"/>
+                <constraint firstItem="4z1-A9-f4q" firstAttribute="top" secondItem="YMd-pE-Gfq" secondAttribute="bottom" constant="3" id="zbt-Rh-foA"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="pna-cJ-x3T"/>
+            <size key="customSize" width="160" height="200"/>
+            <point key="canvasLocation" x="288.40579710144931" y="75"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="book_cover" width="270" height="135"/>
+        <image name="player" width="33" height="33"/>
+    </resources>
+</document>

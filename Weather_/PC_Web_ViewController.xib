@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PC_Web_ViewController" customModule="Nhà_Nông_Xanh" customModuleProvider="target">
+            <connections>
+                <outlet property="titleLabel" destination="QJR-6X-wfI" id="aoD-ov-9o4"/>
+                <outlet property="view" destination="ci3-oB-Rm1" id="DQO-wa-r65"/>
+                <outlet property="webView" destination="714-xp-mZW" id="eiY-ie-7bN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ci3-oB-Rm1">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2h-g3-Mzm">
+                    <rect key="frame" x="0.0" y="44" width="414" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChQ-rf-Eg3">
+                            <rect key="frame" x="8" y="10" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="3X6-np-n5c"/>
+                                <constraint firstAttribute="width" constant="44" id="MCh-YX-rsz"/>
+                            </constraints>
+                            <state key="normal" image="icon_back"/>
+                            <connections>
+                                <action selector="didPressBack" destination="-1" eventType="touchUpInside" id="K2N-vc-cck"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJR-6X-wfI">
+                            <rect key="frame" x="60" y="22" width="294" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="5co-Zv-n2A"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siI-oT-KGT">
+                            <rect key="frame" x="362" y="10" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="Asv-P6-2dC"/>
+                                <constraint firstAttribute="width" constant="44" id="s7g-w5-rgg"/>
+                            </constraints>
+                            <state key="normal" image="ic_search"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.63921568630000003" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="ChQ-rf-Eg3" firstAttribute="top" secondItem="I2h-g3-Mzm" secondAttribute="top" constant="10" id="9H9-S3-7sZ"/>
+                        <constraint firstItem="QJR-6X-wfI" firstAttribute="top" secondItem="I2h-g3-Mzm" secondAttribute="top" constant="22" id="EfN-IU-8Nm"/>
+                        <constraint firstItem="siI-oT-KGT" firstAttribute="top" secondItem="I2h-g3-Mzm" secondAttribute="top" constant="10" id="Z3e-oB-dVd"/>
+                        <constraint firstItem="QJR-6X-wfI" firstAttribute="leading" secondItem="ChQ-rf-Eg3" secondAttribute="trailing" constant="8" id="cf8-O1-57Y"/>
+                        <constraint firstItem="siI-oT-KGT" firstAttribute="leading" secondItem="QJR-6X-wfI" secondAttribute="trailing" constant="8" id="hcu-P2-ztA"/>
+                        <constraint firstAttribute="trailing" secondItem="siI-oT-KGT" secondAttribute="trailing" constant="8" id="hvV-hA-te7"/>
+                        <constraint firstItem="ChQ-rf-Eg3" firstAttribute="leading" secondItem="I2h-g3-Mzm" secondAttribute="leading" constant="8" id="jRf-iS-MwU"/>
+                        <constraint firstAttribute="height" constant="64" id="tRP-7U-Qrn"/>
+                    </constraints>
+                </view>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="714-xp-mZW">
+                    <rect key="frame" x="0.0" y="108" width="414" height="754"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="714-xp-mZW" firstAttribute="top" secondItem="I2h-g3-Mzm" secondAttribute="bottom" id="49F-ek-eWp"/>
+                <constraint firstItem="I2h-g3-Mzm" firstAttribute="trailing" secondItem="qm9-e4-oxz" secondAttribute="trailing" id="5XT-DY-3Z7"/>
+                <constraint firstItem="I2h-g3-Mzm" firstAttribute="leading" secondItem="qm9-e4-oxz" secondAttribute="leading" id="Dxe-20-5Jd"/>
+                <constraint firstItem="I2h-g3-Mzm" firstAttribute="top" secondItem="qm9-e4-oxz" secondAttribute="top" id="JxV-7A-sst"/>
+                <constraint firstItem="714-xp-mZW" firstAttribute="leading" secondItem="qm9-e4-oxz" secondAttribute="leading" id="VfK-MN-o3U"/>
+                <constraint firstItem="714-xp-mZW" firstAttribute="bottom" secondItem="qm9-e4-oxz" secondAttribute="bottom" id="XLC-HD-N8G"/>
+                <constraint firstItem="714-xp-mZW" firstAttribute="trailing" secondItem="qm9-e4-oxz" secondAttribute="trailing" id="blW-BB-UEx"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="qm9-e4-oxz"/>
+            <point key="canvasLocation" x="-288.40579710144931" y="-66.294642857142861"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_search" width="50.5" height="50.5"/>
+        <image name="icon_back" width="33" height="33"/>
+    </resources>
+</document>

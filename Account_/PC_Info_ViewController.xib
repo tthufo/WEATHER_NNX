@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PC_Info_ViewController" customModule="HearThis" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="NBy-aq-cqm" id="QM9-Ky-Haq"/>
+                <outlet property="view" destination="wvr-aG-TEd" id="Mp9-Q2-Oe5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="wvr-aG-TEd">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXU-8s-cfN">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tài khoản" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQ2-Xi-yiW">
+                            <rect key="frame" x="146" y="22" width="83.5" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="ckD-Ty-MHK"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="79" id="gUM-Td-PsG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjU-wa-C0Q">
+                            <rect key="frame" x="8" y="10" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="hJI-Vk-8dR"/>
+                                <constraint firstAttribute="width" constant="44" id="jx5-e0-0ah"/>
+                            </constraints>
+                            <state key="normal" image="ic_menu"/>
+                            <connections>
+                                <action selector="didPressMenu" destination="-1" eventType="touchUpInside" id="sGf-ix-Z5y"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTm-F0-lQ2">
+                            <rect key="frame" x="323" y="10" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="i7f-Yb-GGW"/>
+                                <constraint firstAttribute="width" constant="44" id="ymL-Ye-I6j"/>
+                            </constraints>
+                            <state key="normal" image="ic_search"/>
+                            <connections>
+                                <action selector="didPressSearch" destination="-1" eventType="touchUpInside" id="5ib-9k-ojp"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.60784313729999995" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="TjU-wa-C0Q" firstAttribute="leading" secondItem="N8a-hm-drJ" secondAttribute="leading" constant="8" id="Enw-Xv-mbj"/>
+                        <constraint firstItem="xQ2-Xi-yiW" firstAttribute="centerX" secondItem="eXU-8s-cfN" secondAttribute="centerX" id="GhJ-1P-e0m"/>
+                        <constraint firstItem="N8a-hm-drJ" firstAttribute="trailing" secondItem="uTm-F0-lQ2" secondAttribute="trailing" constant="8" id="HJC-hP-4dG"/>
+                        <constraint firstItem="TjU-wa-C0Q" firstAttribute="top" secondItem="N8a-hm-drJ" secondAttribute="top" constant="10" id="UfY-du-Qq4"/>
+                        <constraint firstAttribute="height" constant="64" id="V7r-fP-8CA"/>
+                        <constraint firstItem="uTm-F0-lQ2" firstAttribute="top" secondItem="N8a-hm-drJ" secondAttribute="top" constant="10" id="b2O-6C-ZGu"/>
+                        <constraint firstItem="xQ2-Xi-yiW" firstAttribute="top" secondItem="N8a-hm-drJ" secondAttribute="top" constant="22" id="bKt-iJ-VhZ"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="N8a-hm-drJ"/>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="NBy-aq-cqm">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="lxE-Pp-Rc2"/>
+                        <outlet property="delegate" destination="-1" id="Hm6-3l-KG7"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eXU-8s-cfN" firstAttribute="trailing" secondItem="4Qa-f3-Qou" secondAttribute="trailing" id="Cu8-LU-qwz"/>
+                <constraint firstItem="NBy-aq-cqm" firstAttribute="top" secondItem="eXU-8s-cfN" secondAttribute="bottom" id="Lq3-QG-fHd"/>
+                <constraint firstItem="eXU-8s-cfN" firstAttribute="leading" secondItem="4Qa-f3-Qou" secondAttribute="leading" id="Mkx-AP-aZ6"/>
+                <constraint firstItem="NBy-aq-cqm" firstAttribute="leading" secondItem="4Qa-f3-Qou" secondAttribute="leading" id="NJn-TW-jeF"/>
+                <constraint firstItem="NBy-aq-cqm" firstAttribute="trailing" secondItem="4Qa-f3-Qou" secondAttribute="trailing" id="PKD-0s-1ED"/>
+                <constraint firstItem="NBy-aq-cqm" firstAttribute="bottom" secondItem="4Qa-f3-Qou" secondAttribute="bottom" id="tz2-Ap-iPu"/>
+                <constraint firstItem="eXU-8s-cfN" firstAttribute="top" secondItem="4Qa-f3-Qou" secondAttribute="top" id="xI4-V5-7lz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="4Qa-f3-Qou"/>
+            <point key="canvasLocation" x="61.600000000000001" y="66.11694152923539"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_menu" width="33" height="33"/>
+        <image name="ic_search" width="50.5" height="50.5"/>
+    </resources>
+</document>
