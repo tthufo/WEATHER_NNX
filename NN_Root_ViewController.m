@@ -66,7 +66,11 @@
     
     
     NN_List_ViewController * weather1 = [NN_List_ViewController new];
-     
+         
+    weather1.titleText = @"Video";
+
+      weather1.cateId = @"795";
+    
      UINavigationController *nav2 = [[UINavigationController alloc]
                                      initWithRootViewController:weather1];
      
@@ -80,6 +84,12 @@
     
     NN_List_ViewController * weather2 = [NN_List_ViewController new];
       
+    weather2.titleText = @"Tin nổi bật";
+
+    weather2.cateId = @"6281";
+    
+//    weather2.titleText = @"Tin nổi bật";
+    
       UINavigationController *nav3 = [[UINavigationController alloc]
                                       initWithRootViewController:weather2];
       

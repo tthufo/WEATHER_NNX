@@ -312,7 +312,7 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
     }
     
     func checkRegister(package: NSArray) -> Bool {
-      var isReg = false
+      var isReg = true //false /// debug mode
       for dict in package {
           let expDate = ((dict as! NSDictionary).getValueFromKey("expireTime")! as NSString).date(withFormat: "dd/MM/yyyy")
           if (dict as! NSDictionary).getValueFromKey("status") == "1" && expDate! > Date() {

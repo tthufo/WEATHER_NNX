@@ -44,33 +44,53 @@
     
     self.delegate = self;
     
-    tabsName = @[@"SÁCH", @"TRUYỆN", @"SÁCH NÓI"];
+    tabsName = @[@"NHÀ NÔNG LÀM GIÀU", @"CHUYÊN GIA TƯ VẤN", @"CÔNG NGHỆ & MÔI TRƯỜNG", @"THỊ TRƯỜNG", @"NÔNG NGHIỆP SẠCH", @"AN TOÀN THỰC PHẨM"];
     
     NSMutableArray * arr = [NSMutableArray new];
     
+    NSArray * cats = @[
+    @"762",
+    @"6296",
+    @"6297",
+    @"574",
+    @"40506",
+    @"6274"];
+    
+    NSMutableArray * cons = [NSMutableArray new];
+    
     for(int i = 0; i < tabsName.count; i++)
     {
-//        [arr addObject:[NSString stringWithFormat:@"%f", (IS_IPHONE_5 || IS_IPHONE_4_OR_LESS) ? [[self modelLabel:i] sizeOfLabel].width + 5 : screenWidth1 / 4]];
+        [arr addObject:[NSString stringWithFormat:@"%f", (IS_IPHONE_5 || IS_IPHONE_4_OR_LESS) ? [[self modelLabel:i] sizeOfLabel].width + 5 : [[self modelLabel:i] sizeOfLabel].width + 5]];
+        
+        NN_List_ViewController * weather1 = [NN_List_ViewController new];
+                
+        weather1.isHidden = YES;
+
+        weather1.cateId = cats[i];
+        
+        [cons addObject:weather1];
     }
         
     //if((IS_IPHONE_5 || IS_IPHONE_4_OR_LESS))
     {
-//        self.arr = arr;
+        self.arr = arr;
     }
     
-    Book_Inner_ViewController * tab1 = [Book_Inner_ViewController new];
     
-    tab1.config = @{@"url": @{@"CMD_CODE": @"getListReadOfUser", @"book_type": @(1), @"price": @(0)}};
     
-    Book_Inner_ViewController * tab2 = [Book_Inner_ViewController new];
-      
-    tab2.config = @{@"url": @{@"CMD_CODE": @"getListReadOfUser", @"book_type": @(2), @"price": @(0)}};
+//    Book_Inner_ViewController * tab1 = [Book_Inner_ViewController new];
+//
+//    tab1.config = @{@"url": @{@"CMD_CODE": @"getListReadOfUser", @"book_type": @(1), @"price": @(0)}};
+//
+//    Book_Inner_ViewController * tab2 = [Book_Inner_ViewController new];
+//
+//    tab2.config = @{@"url": @{@"CMD_CODE": @"getListReadOfUser", @"book_type": @(2), @"price": @(0)}};
+//
+//    Book_Inner_ViewController * tab3 = [Book_Inner_ViewController new];
+//
+//    tab3.config = @{@"url": @{@"CMD_CODE": @"getListReadOfUser", @"book_type": @(3), @"price": @(0)}};
 
-    Book_Inner_ViewController * tab3 = [Book_Inner_ViewController new];
-      
-    tab3.config = @{@"url": @{@"CMD_CODE": @"getListReadOfUser", @"book_type": @(3), @"price": @(0)}};
-
-    controllers = [@[tab1, tab2, tab3] mutableCopy];
+    controllers = cons;//[@[tab1, tab2, tab3] mutableCopy];
     
     [self performSelector:@selector(loadContent) withObject:nil afterDelay:0.0];
 }
@@ -83,7 +103,7 @@
         {
             if([tab isKindOfClass:[UILabel class]])
             {
-                ((UILabel*)tab).textColor = [viewPager.tabsView.subviews indexOfObject:v] == index ? [AVHexColor colorWithHexString:kColor] : [UIColor blackColor];
+                ((UILabel*)tab).textColor = [viewPager.tabsView.subviews indexOfObject:v] == index ? [AVHexColor colorWithHexString:@"#00A34B"] : [UIColor blackColor];
             }
         }
     }
@@ -96,7 +116,7 @@
 }
 
 - (IBAction)didPressSearch:(id)sender {
-    [[self CENTER] pushViewController:[Search_ViewController new] animated:YES];
+    [[self CENTER] pushViewController:[NN_Search_ViewController new] animated:YES];
 }
 
 #pragma mark - Setters
@@ -181,7 +201,7 @@
     switch (component)
     {
         case ViewPagerIndicator:
-            return [AVHexColor colorWithHexString:kColor];
+            return [AVHexColor colorWithHexString:@"#00A34B"];
         case ViewPagerTabsView:
             return [UIColor whiteColor];
         case ViewPagerContent:

@@ -21,11 +21,11 @@ class Information: NSObject {
     
     @objc static var avatar: UIImage?
     
-    static var userInfo: NSDictionary?
+    @objc static var userInfo: NSDictionary?
     
     static var offLine: NSArray?
     
-    static var log: NSDictionary?
+    @objc static var log: NSDictionary?
     
     @objc static func saveToken() {
         if self.getValue("token") != nil {

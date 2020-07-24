@@ -130,7 +130,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate, MFMessageC
         LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"http://m.nhanongxanh.vn/getmsisdnapi/", "overrideAlert":"1", "overrideError":"1"], withCache: { (cache) in
         }, andCompletion: { (response, errorCode, error, isValid, object) in
                       
-            print("===>", response, errorCode)
+//            print("===>", response, errorCode)
             
             if response != nil {
 //                let hpple = TFHpple.init(htmlData: response!.data(using: .utf8))
@@ -227,6 +227,8 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate, MFMessageC
         logo.frame = frame
         
         logo.alpha = 0
+        
+        print("====>", Information.token)
         
         UIView.animate(withDuration: 0.5, animations: {
 //            self.cover.alpha = bbgg ? 0.3 : 0
@@ -464,14 +466,14 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate, MFMessageC
                 self.showToast("Không có thông tin tài khoản. Liên hệ quản trị viên để được tài trợ.", andPos: 0)
                 return
             }
-                                         
+            
             self.add(["name":self.uName.text as Any, "pass":self.pass.text as Any], andKey: "log")
 
             self.add((response?.dictionize()["RESULT"] as! NSDictionary).reFormat() as? [AnyHashable : Any], andKey: "info")
 
             Information.saveInfo()
 
-            self.addValue((response?.dictionize()["RESULT"] as! NSDictionary).getValueFromKey("session"), andKey: "token")
+            self.addValue((response?.dictionize()["RESULT"] as! NSDictionary).getValueFromKey("deviceId"), andKey: "token")
 
             Information.saveToken()
 

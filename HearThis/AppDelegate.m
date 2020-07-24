@@ -57,6 +57,8 @@
     
     [Information saveInfo];
     
+    NSLog(@"%@", Information.log);
+    
     if(![self getValue:@"ipod"])
     {
         [self addValue:@"0" andKey:@"ipod"];
@@ -735,7 +737,9 @@ UIBackgroundTaskIdentifier bgTask;
     
     NSArray * date = @[@"CN", @"Thứ 2", @"Thứ 3", @"Thứ 4", @"Thứ 5", @"Thứ 6", @"Thứ 7"];
         
-    return  date[day - 1];
+    return  date[day];
+
+//    return  date[day - 1];
 }
 
 - (CGFloat)returnSizing:(NSAttributedString*)labelString  {
