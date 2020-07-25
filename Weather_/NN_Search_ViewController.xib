@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="search" destination="Fjr-pW-Nky" id="WNa-1M-RyE"/>
                 <outlet property="tableView" destination="Qda-gk-zy2" id="YM3-P5-g1P"/>
+                <outlet property="topTitle" destination="c98-P3-98c" id="t8g-gK-2JD"/>
                 <outlet property="view" destination="vXz-eX-7Cu" id="DTi-wb-R8i"/>
             </connections>
         </placeholder>
@@ -49,7 +50,7 @@
                             <rect key="frame" x="60" y="12" width="337" height="40"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fjr-pW-Nky">
-                                    <rect key="frame" x="8" y="7" width="284" height="26"/>
+                                    <rect key="frame" x="8" y="7" width="286" height="26"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     <connections>
@@ -57,9 +58,9 @@
                                     </connections>
                                 </textField>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_search_coral" translatesAutoresizingMaskIntoConstraints="NO" id="Rw5-wY-eqi">
-                                    <rect key="frame" x="300" y="8" width="25" height="25"/>
+                                    <rect key="frame" x="302" y="8" width="23" height="25"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="25" id="H4k-fe-Cct"/>
+                                        <constraint firstAttribute="width" constant="23" id="H4k-fe-Cct"/>
                                         <constraint firstAttribute="height" constant="25" id="hSx-BO-dTp"/>
                                     </constraints>
                                 </imageView>
@@ -92,24 +93,36 @@
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="jeI-a6-o0M"/>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qda-gk-zy2">
-                    <rect key="frame" x="0.0" y="108" width="414" height="754"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qda-gk-zy2">
+                    <rect key="frame" x="0.0" y="148" width="414" height="714"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="6KY-Nn-l8G"/>
                         <outlet property="delegate" destination="-1" id="5rx-VS-TlR"/>
                     </connections>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KẾT QUẢ TÌM KIẾM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c98-P3-98c">
+                    <rect key="frame" x="20" y="116" width="374" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="M5U-MD-K1V"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="c98-P3-98c" firstAttribute="top" secondItem="kSo-yM-fCM" secondAttribute="bottom" constant="8" id="CUU-di-3sG"/>
                 <constraint firstItem="kSo-yM-fCM" firstAttribute="trailing" secondItem="eSW-eX-0es" secondAttribute="trailing" id="ESi-jN-R9I"/>
                 <constraint firstItem="Qda-gk-zy2" firstAttribute="bottom" secondItem="eSW-eX-0es" secondAttribute="bottom" id="G6H-pS-mT0"/>
-                <constraint firstItem="Qda-gk-zy2" firstAttribute="top" secondItem="kSo-yM-fCM" secondAttribute="bottom" id="Gfu-x2-6zQ"/>
+                <constraint firstItem="Qda-gk-zy2" firstAttribute="top" secondItem="kSo-yM-fCM" secondAttribute="bottom" constant="40" id="Gfu-x2-6zQ"/>
+                <constraint firstItem="c98-P3-98c" firstAttribute="leading" secondItem="eSW-eX-0es" secondAttribute="leading" constant="20" id="K9Q-W2-XLB"/>
                 <constraint firstItem="Qda-gk-zy2" firstAttribute="leading" secondItem="eSW-eX-0es" secondAttribute="leading" id="UsN-pM-ABJ"/>
                 <constraint firstItem="Qda-gk-zy2" firstAttribute="trailing" secondItem="eSW-eX-0es" secondAttribute="trailing" id="ZFX-tO-M7A"/>
                 <constraint firstItem="kSo-yM-fCM" firstAttribute="leading" secondItem="eSW-eX-0es" secondAttribute="leading" id="bcf-HI-6zz"/>
                 <constraint firstItem="kSo-yM-fCM" firstAttribute="top" secondItem="eSW-eX-0es" secondAttribute="top" id="kfG-1L-PZa"/>
+                <constraint firstItem="eSW-eX-0es" firstAttribute="trailing" secondItem="c98-P3-98c" secondAttribute="trailing" constant="20" id="ssG-Fh-zUP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="eSW-eX-0es"/>
             <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>

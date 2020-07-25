@@ -19,6 +19,8 @@ class NN_Search_ViewController: UIViewController, UITextFieldDelegate {
         var totalPage: Int = 1
           
         var isLoadMore: Bool = false
+    
+        @IBOutlet var topTitle: UILabel!
         
         @objc var isHidden: Bool = false
         
@@ -34,6 +36,8 @@ class NN_Search_ViewController: UIViewController, UITextFieldDelegate {
             dataList = NSMutableArray.init()
 
             tableView.withCell("NN_Cell")
+            
+            tableView.withCell("NN_Cell_Detail")
                                    
             tableView.refreshControl = refreshControl
                    
@@ -92,6 +96,8 @@ class NN_Search_ViewController: UIViewController, UITextFieldDelegate {
     //
                 self.dataList.addObjects(from: data.withMutable())
                 
+                self.topTitle.alpha = self.dataList.count != 0 ? 1 : 0
+                
                 self.tableView.reloadData()
             })
         }
@@ -102,9 +108,12 @@ class NN_Search_ViewController: UIViewController, UITextFieldDelegate {
     
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
              search.resignFirstResponder()
-            if (textField.hasText) {
+             if (textField.hasText) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
+                    self.tableView.setContentOffset(.zero, animated: false)
+                })
                 self.didReload(self.refreshControl)
-            }
+             }
              return true
         }
     }
@@ -120,15 +129,15 @@ class NN_Search_ViewController: UIViewController, UITextFieldDelegate {
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "NN_Cell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: indexPath.row != 0 ? "NN_Cell_Detail" : "NN_Cell", for: indexPath)
             
             let data = dataList[indexPath.row] as! NSDictionary
 
-//            (self.withView(cell, tag: 10) as! UIView).withShadow()
+            (self.withView(cell, tag: 111) as! UIView).withBorder(["Bwidth": 0, "Bcorner": 6])
 
             (self.withView(cell, tag: 11) as! UIImageView).imageUrl(url: data.getValueFromKey("thumbnail"))
             
-            (self.withView(cell, tag: 11) as! UIImageView).heightConstaint = indexPath.row == 0 ? 197 : 0
+//            (self.withView(cell, tag: 11) as! UIImageView).heightConstaint?.constant = indexPath.row == 0 ? 197 : 0
             
             (self.withView(cell, tag: 12) as! UILabel).text = data.getValueFromKey("title")
                 
@@ -139,6 +148,14 @@ class NN_Search_ViewController: UIViewController, UITextFieldDelegate {
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
+            
+            let data = dataList[indexPath.row] as! NSDictionary
+
+              let n = NN_Detail_ViewController.init()
+              
+              n.object = data
+              
+              self.center().pushViewController(n, animated: true)
         }
         
         func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

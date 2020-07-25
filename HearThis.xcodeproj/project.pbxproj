@@ -129,6 +129,12 @@
 		FC9C9CD424CAA49A004E9125 /* NN_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9C9CD324CAA49A004E9125 /* NN_Cell.xib */; };
 		FC9C9CD724CAC021004E9125 /* NN_Search_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9C9CD524CAC021004E9125 /* NN_Search_ViewController.swift */; };
 		FC9C9CD824CAC021004E9125 /* NN_Search_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9C9CD624CAC021004E9125 /* NN_Search_ViewController.xib */; };
+		FC9C9CDA24CACAEC004E9125 /* NN_Cell_Detail.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9C9CD924CACAEC004E9125 /* NN_Cell_Detail.xib */; };
+		FC9C9CDD24CAD6D5004E9125 /* NN_Detail_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9C9CDB24CAD6D5004E9125 /* NN_Detail_ViewController.swift */; };
+		FC9C9CDE24CAD6D5004E9125 /* NN_Detail_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9C9CDC24CAD6D5004E9125 /* NN_Detail_ViewController.xib */; };
+		FC9C9CF224CAE08B004E9125 /* NN_Detail_Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9C9CF124CAE08B004E9125 /* NN_Detail_Header.xib */; };
+		FC9C9CF524CB32A7004E9125 /* NN_Web_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9C9CF324CB32A6004E9125 /* NN_Web_Cell.swift */; };
+		FC9C9CF624CB32A7004E9125 /* NN_Web_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9C9CF424CB32A6004E9125 /* NN_Web_Cell.xib */; };
 		FCAD4AA82434FD1A00387AF6 /* MenuList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCAD4AA32434FD1A00387AF6 /* MenuList.plist */; };
 		FCAD4AA92434FD1A00387AF6 /* SC_Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCAD4AA42434FD1A00387AF6 /* SC_Menu.xib */; };
 		FCAD4AAA2434FD1A00387AF6 /* SC_Menu_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAD4AA52434FD1A00387AF6 /* SC_Menu_ViewController.m */; };
@@ -351,6 +357,12 @@
 		FC9C9CD324CAA49A004E9125 /* NN_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NN_Cell.xib; sourceTree = "<group>"; };
 		FC9C9CD524CAC021004E9125 /* NN_Search_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NN_Search_ViewController.swift; sourceTree = "<group>"; };
 		FC9C9CD624CAC021004E9125 /* NN_Search_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NN_Search_ViewController.xib; sourceTree = "<group>"; };
+		FC9C9CD924CACAEC004E9125 /* NN_Cell_Detail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NN_Cell_Detail.xib; sourceTree = "<group>"; };
+		FC9C9CDB24CAD6D5004E9125 /* NN_Detail_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NN_Detail_ViewController.swift; sourceTree = "<group>"; };
+		FC9C9CDC24CAD6D5004E9125 /* NN_Detail_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NN_Detail_ViewController.xib; sourceTree = "<group>"; };
+		FC9C9CF124CAE08B004E9125 /* NN_Detail_Header.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NN_Detail_Header.xib; sourceTree = "<group>"; };
+		FC9C9CF324CB32A6004E9125 /* NN_Web_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NN_Web_Cell.swift; sourceTree = "<group>"; };
+		FC9C9CF424CB32A6004E9125 /* NN_Web_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NN_Web_Cell.xib; sourceTree = "<group>"; };
 		FCAD4AA32434FD1A00387AF6 /* MenuList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MenuList.plist; sourceTree = "<group>"; };
 		FCAD4AA42434FD1A00387AF6 /* SC_Menu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SC_Menu.xib; sourceTree = "<group>"; };
 		FCAD4AA52434FD1A00387AF6 /* SC_Menu_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SC_Menu_ViewController.m; sourceTree = "<group>"; };
@@ -762,8 +774,14 @@
 				FC78334024C887E100AAA3AA /* NN_List_ViewController.swift */,
 				FC78334124C887E100AAA3AA /* NN_List_ViewController.xib */,
 				FC9C9CD324CAA49A004E9125 /* NN_Cell.xib */,
+				FC9C9CD924CACAEC004E9125 /* NN_Cell_Detail.xib */,
 				FC9C9CD524CAC021004E9125 /* NN_Search_ViewController.swift */,
 				FC9C9CD624CAC021004E9125 /* NN_Search_ViewController.xib */,
+				FC9C9CDB24CAD6D5004E9125 /* NN_Detail_ViewController.swift */,
+				FC9C9CDC24CAD6D5004E9125 /* NN_Detail_ViewController.xib */,
+				FC9C9CF124CAE08B004E9125 /* NN_Detail_Header.xib */,
+				FC9C9CF324CB32A6004E9125 /* NN_Web_Cell.swift */,
+				FC9C9CF424CB32A6004E9125 /* NN_Web_Cell.xib */,
 			);
 			path = Weather_;
 			sourceTree = "<group>";
@@ -981,6 +999,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC816EA72472A9E50056CFB9 /* bm.docx in Resources */,
+				FC9C9CDE24CAD6D5004E9125 /* NN_Detail_ViewController.xib in Resources */,
+				FC9C9CDA24CACAEC004E9125 /* NN_Cell_Detail.xib in Resources */,
 				FC816EA82472A9E50056CFB9 /* dv.docx in Resources */,
 				FCFB51761DD0EFE300D49FB2 /* M_Detail_ViewController.xib in Resources */,
 				FCB238BB244186E10034B40B /* Book_Detail_Title.xib in Resources */,
@@ -1015,6 +1035,7 @@
 				FCB3CD6A1DA4DDE9002FABDD /* HT_Genres_ViewController.xib in Resources */,
 				FC91278E246BADBF001797A8 /* PC_Confirm_ViewController.xib in Resources */,
 				FC783989243922C100470148 /* PC_Sub_Cell.xib in Resources */,
+				FC9C9CF224CAE08B004E9125 /* NN_Detail_Header.xib in Resources */,
 				FCB238C2244218DB0034B40B /* Author_ViewController.xib in Resources */,
 				FCFB70E024707B6C00B30771 /* Rainy_Cell.xib in Resources */,
 				FC7A98D12444AD010038C226 /* Tag_Cell.xib in Resources */,
@@ -1051,6 +1072,7 @@
 				FC7551031DAE4640007992DF /* Default-568h@2x.png in Resources */,
 				FC130B952446353100D64012 /* Book_Inner_ViewController.xib in Resources */,
 				FCC965B21DA75C060025971E /* HT_Player_Item.xib in Resources */,
+				FC9C9CF624CB32A7004E9125 /* NN_Web_Cell.xib in Resources */,
 				FC78397A2438F37F00470148 /* PC_Info_ViewController.xib in Resources */,
 				FC69D4342440595B006D57D9 /* TG_Room_Cell_Banner_0.xib in Resources */,
 				FCB238CA2442329C0034B40B /* Author_Detail_Header.xib in Resources */,
@@ -1201,7 +1223,9 @@
 				FC7550F01DAC959A007992DF /* HT_Detail_ViewController.m in Sources */,
 				FC91B732243120F400AA6671 /* GUIPlayerView.m in Sources */,
 				FC1AD7D31DA40CA8002BA7EC /* AppDelegate.m in Sources */,
+				FC9C9CDD24CAD6D5004E9125 /* NN_Detail_ViewController.swift in Sources */,
 				FC93BB732471B6D3006ED6D8 /* DayAxisValueFormatter.m in Sources */,
+				FC9C9CF524CB32A7004E9125 /* NN_Web_Cell.swift in Sources */,
 				FCC7EFB51DB9348A0080A08A /* HT_Player_Item.m in Sources */,
 				FC1AD7D01DA40CA8002BA7EC /* main.m in Sources */,
 				FC640A821DAAAD8C00DAEF55 /* DownLoad.m in Sources */,

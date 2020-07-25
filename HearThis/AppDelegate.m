@@ -100,6 +100,7 @@
     [self.window addSubview:view];
     
     
+      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(videoExitFullScreen:) name:@"UIWindowDidBecomeHiddenNotification" object:nil];
 
     
     self.window.rootViewController =  [self rootViewController];
@@ -109,9 +110,13 @@
     [self.window makeKeyAndVisible];
     
     
-    
     return YES;
-}
+    }
+
+    - (void)videoExitFullScreen:(id)sender
+    {
+      [[UIApplication sharedApplication] setStatusBarHidden:NO animated:YES];
+    }
 
 - (TT_Panel_ViewController *)rootViewController {
     

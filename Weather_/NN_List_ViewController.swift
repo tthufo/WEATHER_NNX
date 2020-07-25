@@ -126,11 +126,21 @@ extension NN_List_ViewController: UITableViewDataSource, UITableViewDelegate {
             
         (self.withView(cell, tag: 14) as! UILabel).text = data.getValueFromKey("date")
 
+        (self.withView(cell, tag: 190) as! UIImageView).isHidden = (data.getValueFromKey("content")?.contains(find: "wp-video"))! ? false : true
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let data = dataList[indexPath.row] as! NSDictionary
+
+        let n = NN_Detail_ViewController.init()
+        
+        n.object = data
+        
+        self.center().pushViewController(n, animated: true)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

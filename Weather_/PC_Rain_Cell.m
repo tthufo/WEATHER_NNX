@@ -73,11 +73,11 @@
 }
 
 - (void)optional {
-    [daily withBorder:@{@"Bcolor": [self color: @"#5530F5"], @"Bground": [self color: !day ? @"#5530F5" : @"#FFFFFF"], @"Bwidth": !day ? @"1" : @"0", @"Bcorner": @"16"}];
-    [weekLy withBorder:@{@"Bcolor": [self color: @"#5530F5"], @"Bground": [self color: !day ? @"#FFFFFF" : @"5530F5"], @"Bwidth": !day ? @"0" : @"1", @"Bcorner": @"16"}];
+    [daily withBorder:@{@"Bcolor": [self color: @"#00A34B"], @"Bground": [self color: !day ? @"#00A34B" : @"#FFFFFF"], @"Bwidth": !day ? @"1" : @"0", @"Bcorner": @"16"}];
+    [weekLy withBorder:@{@"Bcolor": [self color: @"#00A34B"], @"Bground": [self color: !day ? @"#FFFFFF" : @"00A34B"], @"Bwidth": !day ? @"0" : @"1", @"Bcorner": @"16"}];
     
-    [daily setTitleColor:[self color: !day ? @"#FFFFFF" : @"#5530F5"] forState:UIControlStateNormal];
-    [weekLy setTitleColor:[self color: !day ? @"#5530F5" : @"#FFFFFF"] forState:UIControlStateNormal];
+    [daily setTitleColor:[self color: !day ? @"#FFFFFF" : @"#00A34B"] forState:UIControlStateNormal];
+    [weekLy setTitleColor:[self color: !day ? @"#00A34B" : @"#FFFFFF"] forState:UIControlStateNormal];
 }
 
 - (UIColor*)color:(NSString*)color {

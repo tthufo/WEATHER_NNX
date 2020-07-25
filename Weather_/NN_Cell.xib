@@ -25,7 +25,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPF-Zc-YXc">
+                    <view clipsSubviews="YES" tag="111" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPF-Zc-YXc">
                         <rect key="frame" x="10" y="10" width="394" height="281"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="11" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fx1-YQ-dtW">
@@ -52,10 +52,18 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" tag="190" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playing" translatesAutoresizingMaskIntoConstraints="NO" id="oBB-eP-0J8">
+                                <rect key="frame" x="112" y="72" width="170" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="bGH-Ud-y9N"/>
+                                    <constraint firstAttribute="width" constant="170" id="mUz-HT-8xY"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="fx1-YQ-dtW" firstAttribute="leading" secondItem="aPF-Zc-YXc" secondAttribute="leading" id="0pK-hE-XYT"/>
+                            <constraint firstItem="oBB-eP-0J8" firstAttribute="top" secondItem="aPF-Zc-YXc" secondAttribute="top" constant="72" id="1rq-bt-EYJ"/>
                             <constraint firstItem="aZ7-wc-h6h" firstAttribute="leading" secondItem="aPF-Zc-YXc" secondAttribute="leading" constant="10" id="24c-Se-nAI"/>
                             <constraint firstAttribute="trailing" secondItem="fx1-YQ-dtW" secondAttribute="trailing" id="2my-jD-Eya"/>
                             <constraint firstAttribute="trailing" secondItem="fx1-YQ-dtW" secondAttribute="trailing" id="63n-7W-eqm"/>
@@ -64,6 +72,7 @@
                             <constraint firstAttribute="bottom" secondItem="aZ7-wc-h6h" secondAttribute="bottom" constant="5" id="NPG-nl-8Xd"/>
                             <constraint firstItem="aZ7-wc-h6h" firstAttribute="top" secondItem="VqH-JY-uNJ" secondAttribute="bottom" constant="8" id="PFX-cS-XOV"/>
                             <constraint firstItem="VqH-JY-uNJ" firstAttribute="top" secondItem="fx1-YQ-dtW" secondAttribute="bottom" constant="8" id="Q7p-XS-eaK"/>
+                            <constraint firstItem="oBB-eP-0J8" firstAttribute="centerX" secondItem="aPF-Zc-YXc" secondAttribute="centerX" id="fcZ-Pd-ZzJ"/>
                             <constraint firstAttribute="trailing" secondItem="aZ7-wc-h6h" secondAttribute="trailing" constant="10" id="fmv-QJ-d0A"/>
                             <constraint firstItem="fx1-YQ-dtW" firstAttribute="leading" secondItem="aPF-Zc-YXc" secondAttribute="leading" id="gxU-VR-dJl"/>
                             <constraint firstItem="VqH-JY-uNJ" firstAttribute="leading" secondItem="aPF-Zc-YXc" secondAttribute="leading" constant="10" id="la0-V3-IwW"/>
@@ -97,4 +106,7 @@
             <point key="canvasLocation" x="31.884057971014496" y="140.95982142857142"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="playing" width="170.5" height="170.5"/>
+    </resources>
 </document>
