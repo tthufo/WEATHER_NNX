@@ -734,7 +734,7 @@ UIBackgroundTaskIdentifier bgTask;
 }
 
 - (NSString*)returnDate:(NSString*)value {
-    NSDate *currDate = [value dateWithFormat:@"dd/MM/yyyy"];
+    NSDate *currDate = [value dateWithFormat:@"HH:mm dd/MM/yyyy"];
     NSCalendar* currentCalendar = [NSCalendar currentCalendar];
     NSDateComponents* dateComponents = [currentCalendar components:NSCalendarUnitWeekday fromDate:currDate];
     
@@ -742,9 +742,9 @@ UIBackgroundTaskIdentifier bgTask;
     
     NSArray * date = @[@"CN", @"Thứ 2", @"Thứ 3", @"Thứ 4", @"Thứ 5", @"Thứ 6", @"Thứ 7"];
         
-    return  date[day];
+//    return  date[day];
 
-//    return  date[day - 1];
+    return  date[day - 1];
 }
 
 - (CGFloat)returnSizing:(NSAttributedString*)labelString  {

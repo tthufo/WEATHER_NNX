@@ -153,6 +153,13 @@ extension UIImage {
 }
 
 extension UIImageView {
+    
+    @objc public func setImageColor(color: UIColor) {
+       let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
+       self.image = templateImage
+       self.tintColor = color
+     }
+    
     var imageWithFade: UIImage? {
         get{
             return self.image
@@ -652,6 +659,16 @@ extension String {
 }
 
 extension UIView {
+    
+    func setGradientBackground(colorTop: UIColor, colorBottom: UIColor){
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.red.cgColor, UIColor.orange.cgColor, UIColor.blue.cgColor, UIColor.magenta.cgColor, UIColor.yellow.cgColor]//        gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0)
+//        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
+//        gradientLayer.locations = [NSNumber(floatLiteral: 0.0), NSNumber(floatLiteral: 1.0)]
+        gradientLayer.frame = self.bounds
+
+        self.layer.insertSublayer(gradientLayer, at: 0)
+    }
     
     func topRadius() {
         if #available(iOS 11.0, *){

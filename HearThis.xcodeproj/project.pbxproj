@@ -43,6 +43,10 @@
 		FC40A0FF243EFE5C0096B9DB /* TG_Room_Cell_2.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC40A0FB243EFE5C0096B9DB /* TG_Room_Cell_2.xib */; };
 		FC40A101243EFE680096B9DB /* TG_Room_Cell_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC40A100243EFE680096B9DB /* TG_Room_Cell_5.xib */; };
 		FC43399C2436493A00CFD50E /* Navigation_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC43399B2436493A00CFD50E /* Navigation_ViewController.m */; };
+		FC45773624CD77DF00BBBD10 /* PC_Day_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC45773524CD77DF00BBBD10 /* PC_Day_Cell.m */; };
+		FC45773824CD798600BBBD10 /* Day_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC45773724CD798600BBBD10 /* Day_Cell.xib */; };
+		FC45773B24CDBAC800BBBD10 /* PC_Week_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC45773A24CDBAC800BBBD10 /* PC_Week_Cell.m */; };
+		FC45773D24CDBAF800BBBD10 /* Week_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC45773C24CDBAF800BBBD10 /* Week_Cell.xib */; };
 		FC483CAA246FDEA000875338 /* PC_Day_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC483CA9246FDEA000875338 /* PC_Day_Cell.xib */; };
 		FC483CAC246FE1BB00875338 /* PC_Week_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC483CAB246FE1BB00875338 /* PC_Week_Cell.xib */; };
 		FC483CAE246FEAA400875338 /* PC_Rain_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC483CAD246FEAA400875338 /* PC_Rain_Cell.xib */; };
@@ -244,6 +248,12 @@
 		FC40A100243EFE680096B9DB /* TG_Room_Cell_5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TG_Room_Cell_5.xib; sourceTree = "<group>"; };
 		FC43399A2436493A00CFD50E /* Navigation_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Navigation_ViewController.h; sourceTree = "<group>"; };
 		FC43399B2436493A00CFD50E /* Navigation_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Navigation_ViewController.m; sourceTree = "<group>"; };
+		FC45773424CD77DF00BBBD10 /* PC_Day_Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PC_Day_Cell.h; sourceTree = "<group>"; };
+		FC45773524CD77DF00BBBD10 /* PC_Day_Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PC_Day_Cell.m; sourceTree = "<group>"; };
+		FC45773724CD798600BBBD10 /* Day_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Day_Cell.xib; sourceTree = "<group>"; };
+		FC45773924CDBAC800BBBD10 /* PC_Week_Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PC_Week_Cell.h; sourceTree = "<group>"; };
+		FC45773A24CDBAC800BBBD10 /* PC_Week_Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PC_Week_Cell.m; sourceTree = "<group>"; };
+		FC45773C24CDBAF800BBBD10 /* Week_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Week_Cell.xib; sourceTree = "<group>"; };
 		FC483CA9246FDEA000875338 /* PC_Day_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Day_Cell.xib; sourceTree = "<group>"; };
 		FC483CAB246FE1BB00875338 /* PC_Week_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Week_Cell.xib; sourceTree = "<group>"; };
 		FC483CAD246FEAA400875338 /* PC_Rain_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PC_Rain_Cell.xib; sourceTree = "<group>"; };
@@ -760,8 +770,14 @@
 				FCE4CBCC246E9D7A002C5D8B /* PC_Search_Weather_ViewController.swift */,
 				FCE4CBCD246E9D7A002C5D8B /* PC_Search_Weather_ViewController.xib */,
 				FCE4CBD0246EA4D4002C5D8B /* PC_Notification_Cell.xib */,
+				FC45773424CD77DF00BBBD10 /* PC_Day_Cell.h */,
+				FC45773524CD77DF00BBBD10 /* PC_Day_Cell.m */,
 				FC483CA9246FDEA000875338 /* PC_Day_Cell.xib */,
+				FC45773724CD798600BBBD10 /* Day_Cell.xib */,
+				FC45773924CDBAC800BBBD10 /* PC_Week_Cell.h */,
+				FC45773A24CDBAC800BBBD10 /* PC_Week_Cell.m */,
 				FC483CAB246FE1BB00875338 /* PC_Week_Cell.xib */,
+				FC45773C24CDBAF800BBBD10 /* Week_Cell.xib */,
 				FC483CAF2470535700875338 /* PC_Wind_Cell.h */,
 				FC483CB02470535700875338 /* PC_Wind_Cell.m */,
 				FC483CB12470535700875338 /* PC_Wind_Cell.xib */,
@@ -1019,6 +1035,7 @@
 				FCFB516C1DD075E200D49FB2 /* Action.xib in Resources */,
 				FC7550F91DACDB53007992DF /* EM_Menu.xib in Resources */,
 				FC69D4402440D435006D57D9 /* Book_Detail_ViewController.xib in Resources */,
+				FC45773D24CDBAF800BBBD10 /* Week_Cell.xib in Resources */,
 				FC0A8FB32437770E001A75AF /* PC_Register_ViewController.xib in Resources */,
 				FCB238E724437DB80034B40B /* Event_Detail_Header.xib in Resources */,
 				FC0A8FB12437770E001A75AF /* PC_Forgot_ViewController.xib in Resources */,
@@ -1068,6 +1085,7 @@
 				FCB238D1244354AB0034B40B /* Event_ViewController.xib in Resources */,
 				FC816EA62472A6C00056CFB9 /* PC_Web_ViewController.xib in Resources */,
 				FC8E91B7246BD6B900D61E67 /* PC_Weather_Main_ViewController.xib in Resources */,
+				FC45773824CD798600BBBD10 /* Day_Cell.xib in Resources */,
 				FC7550F11DAC959A007992DF /* HT_Detail_ViewController.xib in Resources */,
 				FC7551031DAE4640007992DF /* Default-568h@2x.png in Resources */,
 				FC130B952446353100D64012 /* Book_Inner_ViewController.xib in Resources */,
@@ -1196,6 +1214,7 @@
 				FC79769A246D5A9200D104B8 /* Weather_FeedBack_ViewController.swift in Sources */,
 				FC816EA52472A6C00056CFB9 /* PC_Web_ViewController.swift in Sources */,
 				FC7839782438F37F00470148 /* PC_Info_ViewController.swift in Sources */,
+				FC45773624CD77DF00BBBD10 /* PC_Day_Cell.m in Sources */,
 				FCB782E01DA413E000BDF913 /* HT_Root_ViewController.m in Sources */,
 				FC640A831DAAAD8C00DAEF55 /* DownloadManager.m in Sources */,
 				FC640A841DAAAD8C00DAEF55 /* History.m in Sources */,
@@ -1218,6 +1237,7 @@
 				FC78333F24C8477800AAA3AA /* NN_Root_ViewController.m in Sources */,
 				FCE4CBCE246E9D7A002C5D8B /* PC_Search_Weather_ViewController.swift in Sources */,
 				FC91B7352431217F00AA6671 /* XMLReader.m in Sources */,
+				FC45773B24CDBAC800BBBD10 /* PC_Week_Cell.m in Sources */,
 				FC7A98D32444B0420038C226 /* Tag_Cell.swift in Sources */,
 				FC91B731243120F400AA6671 /* GUISlider.m in Sources */,
 				FC7550F01DAC959A007992DF /* HT_Detail_ViewController.m in Sources */,

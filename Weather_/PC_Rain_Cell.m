@@ -151,6 +151,11 @@
     
     img.image = [UIImage imageNamed:[self returnImg: [[dict getValueFromKey:@"precipProbability"] intValue]]];
 
+    if (![[self returnImg: [[dict getValueFromKey:@"precipProbability"] intValue]] isEqualToString:@"ic_rain_drop_0"]) {
+       img.image = [img.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+       [img setTintColor:[AVHexColor colorWithHexString:@"#00A34B"]];
+    }
+    
     UILabel * rain = (UILabel*)[self withView:cell tag:13];
     
 //    rain.text = [self returnVal:[dict getValueFromKey:@"precipIntensity"]];

@@ -33,4 +33,8 @@
 
 #import "PC_Rain_Cell.h"
 
+#import "PC_Day_Cell.h"
+
+#import "PC_Week_Cell.h"
+
 //#import "MXParallaxHeader.h"

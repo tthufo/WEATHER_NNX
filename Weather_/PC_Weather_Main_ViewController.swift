@@ -53,6 +53,7 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
         }
         
 //        self.bg.image = UIImage.init(named: logged() && registered ? "bg-2" : "bg_sunny_day")
+        
         self.tableView.reloadData(withAnimation: true)
         
         print(logged(), registered)
@@ -114,9 +115,9 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
         
         tableView.withCell("PC_Weather_Cell")
         
-        tableView.withCell("PC_Day_Cell")
-
         tableView.withCell("PC_Week_Cell")
+
+        tableView.withCell("PC_Day_Cell")
 
         tableView.withCell("PC_Rain_Cell")
 
@@ -157,14 +158,9 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
                                                "page_size": 24,
                                                "position": 1,
             ], "height": self.screenHeight() - 44, "loaded": false, "ident": "PC_Weather_Cell"],
-                                      ["title":"Mới nhất",
-                                       "url": ["CMD_CODE":"getListBook",
-                                          "page_index": 1,
-                                          "page_size": 24,
-                                          "book_type": 2,
-                                          "price": 0,
-                                          "sorting": 1,
-                                        ], "height": 290, "direction": "horizontal", "loaded": false, "ident": "PC_Day_Cell"],
+                                      
+                                      
+                                      
                                       ["title":"Miễn phí HOT",
                                        "url": ["CMD_CODE":"getListBook",
                                            "page_index": 1,
@@ -172,7 +168,21 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
                                            "book_type": 0,
                                            "price": 2,
                                            "sorting": 1,
-                                       ], "height": 450, "direction": "horizontal", "loaded": false, "ident": "PC_Week_Cell"],
+                                       ], "height": 276, "direction": "horizontal", "loaded": false, "ident": "PC_Week_Cell"],
+                                      
+                                      
+                                      ["title":"Mới nhất",
+                                        "url": ["CMD_CODE":"getListBook",
+                                           "page_index": 1,
+                                           "page_size": 24,
+                                           "book_type": 2,
+                                           "price": 0,
+                                           "sorting": 1,
+                                         ], "height": ((self.screenWidth() / 3) * 2) + 0, "direction": "horizontal", "loaded": false, "ident": "PC_Day_Cell"],
+                                      
+                                      
+                                      
+                                      
                                       ["title":"Đọc nhiều nhất",
                                        "url": ["CMD_CODE":"getListBook",
                                           "page_index": 1,
@@ -181,6 +191,8 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
                                           "price": 0,
                                           "sorting": 1,
                                       ], "height": 240, "direction": "vertical", "loaded": false, "ident": "PC_Rain_Cell"],
+                                      
+                                      
                                       ["title":"Sách nói",
                                        "url": ["CMD_CODE":"getListBook",
                                           "page_index": 1,
@@ -189,6 +201,9 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
                                           "price": 0,
                                           "sorting": 1,
                                       ], "height": 350, "direction": "horizontal", "loaded": false, "ident": "PC_Wind_Cell"],
+                                      
+                                      
+                                      
                                       ["title":"Khuyên nên đọc",
                                        "url": ["CMD_CODE":"getListBook",
                                           "page_index": 1,
@@ -197,11 +212,18 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
                                           "price": 0,
                                           "sorting": 3,
                                       ], "height": 0, "direction": "vertical", "loaded": false],
+                                      
+                                      
+                                      
                                       ["url": ["CMD_CODE":"getHomeEvent",
                                                "page_index": 1,
                                                "page_size": 24,
                                                "position": 2,
                                       ], "height": 0, "loaded": false, "ident": "TG_Room_Cell_Banner_1"],
+                                      
+                                      
+                                      
+                                      
                                       ["title":"Promotion",
                                         "url": ["CMD_CODE":"getListPromotionBook",
                                            "page_index": 1,
@@ -408,11 +430,17 @@ extension PC_Weather_Main_ViewController: UITableViewDataSource, UITableViewDele
         }
         
         if indexPath.row == 1 {
-            self.dayCell(cell: cell)
+           (cell as! PC_Week_Cell).data = self.weatherData as NSDictionary
+           (cell as! PC_Week_Cell).didReloadData()
+            
+//            let last = self.withView(cell, tag: 99) as! UIView
+//            last.setGradientBackground(colorTop: .clear, colorBottom: .white)
+//            self.weekCell(cell: cell)
         }
         
         if indexPath.row == 2 {
-            self.weekCell(cell: cell)
+            (cell as! PC_Day_Cell).data = self.weatherData as NSDictionary
+            (cell as! PC_Day_Cell).didReloadData()
         }
         
         if indexPath.row == 3 {
@@ -486,28 +514,37 @@ extension PC_Weather_Main_ViewController: UITableViewDataSource, UITableViewDele
 
     }
     
-    func dayCell(cell: UITableViewCell) {
+    @objc func dayCell() -> NSMutableArray {
         if !self.weatherData.response(forKey: "currently") {
-            return
+            return NSMutableArray.init()
         }
         let currently = (self.weatherData as NSDictionary)["currently"] as! NSDictionary
         
-        let keys = [["key":"precipIntensity", "tag": 1, "unit": "mm"],
-                    ["key":"dewPoint", "tag": 2, "unit": "°"],
-                    ["key":"humidity", "tag": 3, "unit": "%"],
-                    ["key":"windSpeed", "tag": 4, "unit": "km/h"],
-                    ["key":"windGust", "tag": 5, "unit": "km/h"],
-                    ["key":"pressure", "tag": 6, "unit": "mb"],
-                    ["key":"windBearing", "tag": 7, "unit": ""],
-                    ["key":"uvIndex", "tag": 8, "unit": "UV"]]
+        let keys = [
+            ["key":"humidity", "tag": 3, "unit": "%", "img": "ico_humidity_2"],
+            ["key":"uvIndex", "tag": 8, "unit": "UV", "img": "ico_uv"],
+            ["key":"windSpeed", "tag": 4, "unit": "km/h", "img":"ico_wind_2"],
+            ["key":"precipIntensity", "tag": 1, "unit": "mm", "img":"ico_rain"],
+            ["key":"dewPoint", "tag": 2, "unit": "°", "img":"ico_dewpoint"],
+            ["key":"pressure", "tag": 6, "unit": "mb", "img":"ico_pressure"],
+//                    ["key":"windGust", "tag": 5, "unit": "km/h"],
+//                    ["key":"windBearing", "tag": 7, "unit": ""],
+            ]
         
-        for view in cell.contentView.subviews {
+        let arr = NSMutableArray.init()
+        
+//        for view in cell.contentView.subviews {
             for key in keys {
-                if view.tag == key["tag"] as! Int + 9 {
-                    (view as! UILabel).text = self.returnValCurrent(currently.getValueFromKey((key["key"] as! String)), unit: (key["unit"] as! String))
-                }
+//                if view.tag == key["tag"] as! Int + 9 {
+                arr.add(["val": currently.getValueFromKey((key["key"] as! String)), "unit": (key["unit"] as! String), "img": key["img"]])
+//                    (view as! UILabel).text = self.returnValCurrent(currently.getValueFromKey((key["key"] as! String)), unit: (key["unit"] as! String))
+//                }
             }
-        }
+//        }
+        
+        print("++++", arr)
+        
+        return arr
     }
     
     func weekCell(cell: UITableViewCell) {

@@ -34,9 +34,9 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khả năng" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Mk-i1-kxy">
-                        <rect key="frame" x="10" y="68" width="0.0" height="21"/>
+                        <rect key="frame" x="10" y="68" width="90" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" id="hvY-tT-TIP"/>
+                            <constraint firstAttribute="width" constant="90" id="hvY-tT-TIP"/>
                             <constraint firstAttribute="height" constant="21" id="lbP-9Y-mn8"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -82,9 +82,9 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jaw-pS-bLc">
-                        <rect key="frame" x="10" y="138" width="0.0" height="72"/>
+                        <rect key="frame" x="10" y="138" width="90" height="72"/>
                         <constraints>
-                            <constraint firstAttribute="width" id="GTw-JX-g1Z"/>
+                            <constraint firstAttribute="width" constant="90" id="GTw-JX-g1Z"/>
                             <constraint firstAttribute="height" constant="72" id="UdW-7S-ztc"/>
                         </constraints>
                         <string key="text">Lượng mưa 
@@ -94,7 +94,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="O0K-Ge-ell">
-                        <rect key="frame" x="10" y="57" width="394" height="130"/>
+                        <rect key="frame" x="100" y="57" width="304" height="130"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="130" id="jTo-DJ-e3A"/>

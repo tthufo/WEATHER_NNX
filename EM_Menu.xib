@@ -349,11 +349,11 @@
                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                             </state>
                         </button>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_gallery" translatesAutoresizingMaskIntoConstraints="NO" id="b6i-N8-MiU">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2222" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_gallery" translatesAutoresizingMaskIntoConstraints="NO" id="b6i-N8-MiU">
                             <rect key="frame" x="35" y="93" width="30" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_camera" translatesAutoresizingMaskIntoConstraints="NO" id="nmb-0R-meL">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1111" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_camera" translatesAutoresizingMaskIntoConstraints="NO" id="nmb-0R-meL">
                             <rect key="frame" x="35" y="47" width="30" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>

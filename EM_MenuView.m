@@ -178,7 +178,17 @@
         self.menuCompletion(3, @{}, self);
         [self close];
     }];
+    
+    UIImageView *v = (UIImageView*)[self withView:contentView tag:1111];
+    
+    UIImageView *n = (UIImageView*)[self withView:contentView tag:2222];
+
+    v.image = [v.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [v setTintColor:[UIColor grayColor]];
   
+    n.image = [n.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [n setTintColor:[UIColor grayColor]];
+
     [commentView addSubview:contentView];
     
     return commentView;
