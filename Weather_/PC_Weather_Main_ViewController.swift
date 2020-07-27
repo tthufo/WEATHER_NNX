@@ -24,6 +24,16 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
 
     @IBOutlet var titleLabel: MarqueeLabel!
     
+    @IBOutlet var back: UIButton!
+    
+    @IBOutlet var search: UIButton!
+
+    var customLat: String!
+    
+    var customLng: String!
+    
+    var customLocation: String!
+
     var config: NSArray!
     
     var dataList: NSMutableArray!
@@ -72,21 +82,21 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
             })
         }
         
-        self.getAddressFromLatLon(pdblLatitude: self.lat(), pdblLongitude: self.lng())
+        self.getAddressFromLatLon(pdblLatitude: self.customLat != nil ? self.customLat : self.lat(), pdblLongitude: self.customLng != nil ? self.customLng : self.lng())
     }
     
     func location() {
         Permission.shareInstance()?.initLocation(false, andCompletion: { (type) in
             switch type {
             case .lAlways:
-                self.getAddressFromLatLon(pdblLatitude: self.lat(), pdblLongitude: self.lng())
+                self.getAddressFromLatLon(pdblLatitude: self.customLat != nil ? self.customLat : self.lat(), pdblLongitude: self.customLng != nil ? self.customLng : self.lng())
                 break
             case .lDenied:
                 break
             case .lDisabled:
                break
             case .lWhenUse:
-                self.getAddressFromLatLon(pdblLatitude: self.lat(), pdblLongitude: self.lng())
+                self.getAddressFromLatLon(pdblLatitude: self.customLat != nil ? self.customLat : self.lat(), pdblLongitude: self.customLng != nil ? self.customLng : self.lng())
                break
             case .lRestricted:
                break
@@ -100,17 +110,28 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let login = self.loginNav(type: "logIn") { (info) in
-//            if self.coverView.alpha == 0 {
-//                self.didRequestPackage()
+        
+        if self.customLat != nil && self.customLng != nil {
+            back.setImage(UIImage.init(named: "icon_back"), for: .normal)
+            search.alpha = 0
             self.didGetWeather(loading: false)
-//            }
             self.coverView.alpha = 0
+            self.titleLabel.text = self.customLocation
+        } else {
+            let login = self.loginNav(type: "logIn") { (info) in
+    //            if self.coverView.alpha == 0 {
+    //                self.didRequestPackage()
+                self.didGetWeather(loading: false)
+    //            }
+                self.coverView.alpha = 0
+            }
+            
+            self.center()?.present(login, animated: false, completion: nil)
+            
+//            location()
         }
-        
-        self.center()?.present(login, animated: false, completion: nil)
-        
+        location()
+
         weatherData = NSMutableDictionary.init()
         
         tableView.withCell("PC_Weather_Cell")
@@ -237,7 +258,7 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
         
 //        didGetWeather()
         
-        location()
+//        location()
     }
     
     func didGetWeather(loading: Bool = false) {
@@ -245,8 +266,8 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
            self.showSVHUD("", andOption: 0)
         }
        LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"getWeatherOfLocation",
-                                                   "lat": self.lat(),
-                                                   "long": self.lng(),
+                                                   "lat": self.customLat != nil ? self.customLat : self.lat(),
+                                                   "long": self.customLng != nil ? self.customLng : self.lng(),
                                                    "overrideAlert":"1",
 //                                                   "overrideLoading":"1",
 //                                                   "host":self
@@ -275,7 +296,7 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
            self.didRequestPackage()
        })
         
-        getAddressFromLatLon(pdblLatitude: self.lat(), pdblLongitude: self.lng())
+        self.getAddressFromLatLon(pdblLatitude: self.customLat != nil ? self.customLat : self.lat(), pdblLongitude: self.customLng != nil ? self.customLng : self.lng())
    }
     
     @objc func didReload() {
@@ -290,6 +311,10 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
     }
     
     @IBAction func didPressMenu() {
+        if self.customLat != nil && self.customLng != nil {
+            self.navigationController?.popViewController(animated: true)
+            return
+        }
         self.root()?.toggleLeftPanel(nil)
         (self.left() as! TG_Intro_ViewController).reloadLogin()
     }

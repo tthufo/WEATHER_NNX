@@ -23,7 +23,7 @@ class PC_Web_ViewController: UIViewController {
         
         titleLabel.text = titleString ?? ""
         
-        let fileURL = URL(fileURLWithPath: Bundle.main.path(forResource: titleString == "Dịch vụ MeWeather" ? "dv" : "bm", ofType: "docx")!)
+        let fileURL = URL(fileURLWithPath: Bundle.main.path(forResource: titleString == "Liên hệ" ? "dv" : "bm", ofType: "docx")!)
 
         webView.load(URLRequest(url: fileURL))
     }

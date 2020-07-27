@@ -77,8 +77,9 @@ class PC_Search_Weather_ViewController: UIViewController {
     }
     
     func didGetLocation() {
-         LTRequest.sharedInstance()?.didRequestInfo(["cmd_code":"getListFavouriteLocation",
+         LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"getListFavouriteLocation",
                                                      "session":Information.token ?? "",
+                                                     "deviceId":self.deviceUUID() ?? "",
                                                      "overrideAlert":"1",
                                                      "overrideLoading":"1",
                                                      "host":self], withCache: { (cacheString) in
@@ -86,22 +87,23 @@ class PC_Search_Weather_ViewController: UIViewController {
              let result = response?.dictionize() ?? [:]
              self.refreshControl.endRefreshing()
 
-             if result.getValueFromKey("error_code") != "0" || result["result"] is NSNull {
-                 self.showToast(response?.dictionize().getValueFromKey("error_msg") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("error_msg"), andPos: 0)
+             if result.getValueFromKey("ERR_CODE") != "0" || result["RESULT"] is NSNull {
+                 self.showToast(response?.dictionize().getValueFromKey("ERR_MSG") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("ERR_MSG"), andPos: 0)
                  return
              }
             
             self.dataList.removeAllObjects()
             
-            self.dataList.addObjects(from: ((result["result"] as! NSArray) as! [Any]))
+            self.dataList.addObjects(from: ((result["RESULT"] as! NSArray) as! [Any]))
                                                
             self.tableView.reloadData()
       })
    }
     
     func didGetDeleteLocation(id: String) {
-          LTRequest.sharedInstance()?.didRequestInfo(["cmd_code":"deleteFavouriteLocation",
+          LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"deleteFavouriteLocation",
                                                       "session":Information.token ?? "",
+                                                      "deviceId":self.deviceUUID() ?? "",
                                                       "id":id,
                                                       "overrideAlert":"1",
                                                       "overrideLoading":"1",
@@ -109,8 +111,8 @@ class PC_Search_Weather_ViewController: UIViewController {
           }, andCompletion: { (response, errorCode, error, isValid, object) in
               let result = response?.dictionize() ?? [:]
                                                   
-              if result.getValueFromKey("error_code") != "0" || result["result"] is NSNull {
-                  self.showToast(response?.dictionize().getValueFromKey("error_msg") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("error_msg"), andPos: 0)
+              if result.getValueFromKey("ERR_CODE") != "0" || result["RESULT"] is NSNull {
+                  self.showToast(response?.dictionize().getValueFromKey("ERR_MSG") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("ERR_MSG"), andPos: 0)
                   return
               }
 
@@ -119,8 +121,9 @@ class PC_Search_Weather_ViewController: UIViewController {
     }
     
     func didAddLocation(lat: String, lng: String, name: String) {
-          LTRequest.sharedInstance()?.didRequestInfo(["cmd_code":"addFavouriteLocation",
+          LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"addFavouriteLocation",
                                                       "session":Information.token ?? "",
+                                                      "deviceId":self.deviceUUID() ?? "",
                                                       "lat": lat,
                                                       "long": lng,
                                                       "name":name,
@@ -130,8 +133,8 @@ class PC_Search_Weather_ViewController: UIViewController {
           }, andCompletion: { (response, errorCode, error, isValid, object) in
               let result = response?.dictionize() ?? [:]
                                                   
-              if result.getValueFromKey("error_code") != "0" || result["result"] is NSNull {
-                  self.showToast(response?.dictionize().getValueFromKey("error_msg") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("error_msg"), andPos: 0)
+              if result.getValueFromKey("ERR_CODE") != "0" || result["RESULT"] is NSNull {
+                  self.showToast(response?.dictionize().getValueFromKey("ERR_MSG") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("ERR_MSG"), andPos: 0)
                   return
               }
 
@@ -180,5 +183,19 @@ extension PC_Search_Weather_ViewController: UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let data = dataList[indexPath.row] as! NSDictionary
+
+        let weather = PC_Weather_Main_ViewController.init()
+
+        weather.customLat = (data["info"] as! NSDictionary).getValueFromKey("lat")
+
+        weather.customLng = (data["info"] as! NSDictionary).getValueFromKey("long")
+
+        weather.customLocation = (data["info"] as! NSDictionary).getValueFromKey("name")
+                
+        self.navigationController?.pushViewController(weather, animated: true)
+
+        print("==", data["info"] as! NSDictionary)
     }
 }

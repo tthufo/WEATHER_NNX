@@ -364,8 +364,16 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate, MFMessageC
     @IBAction func didPressRegister() {
         self.view.endEditing(true)
         
-        EM_MenuView.init(packageShow: ["info": "Soạn V gửi 1095 để đăng ký gói dịch vụ chuyên sâu, cước 1000đ/ngày. LH: 19001595 (1000đ/phút)"]).show { (index, objc, menu) in
-        }
+        if (MFMessageComposeViewController.canSendText()) {
+             let controller = MFMessageComposeViewController()
+             controller.body = "NXX"
+             controller.recipients = ["1595"]
+             controller.messageComposeDelegate = self
+             self.present(controller, animated: true, completion: nil)
+         }
+        
+//        EM_MenuView.init(packageShow: ["info": "Soạn V gửi 1095 để đăng ký gói dịch vụ chuyên sâu, cước 1000đ/ngày. LH: 19001595 (1000đ/phút)"]).show { (index, objc, menu) in
+//        }
     }
     
     func checkPhone() -> Bool {

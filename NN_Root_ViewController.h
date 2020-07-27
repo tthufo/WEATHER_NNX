@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NN_Root_ViewController : UITabBarController
 
+- (void)didResetLogout;
+
 @end
 
 NS_ASSUME_NONNULL_END

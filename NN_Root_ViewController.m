@@ -292,6 +292,14 @@
     }];
 }
 
+- (void)didResetLogout {
+    self.selectedIndex = 0;
+    
+    UINavigationController * nav = (UINavigationController *)[self.viewControllers firstObject];
+    
+    [((PC_Weather_Main_ViewController*)[nav.viewControllers firstObject]).tableView setContentOffset:CGPointZero animated:NO];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

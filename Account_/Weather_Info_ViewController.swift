@@ -73,20 +73,21 @@ class Weather_Info_ViewController: UIViewController, MFMessageComposeViewControl
     }
     
     func didGetInfo() {
-        LTRequest.sharedInstance()?.didRequestInfo(["cmd_code":"getUserInfo",
+        LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"getUserInfo",
                                                     "session": Information.token ?? "",
+                                                    "deviceId":self.deviceUUID() ?? "",
                                                     "overrideAlert":"1",
                                                     "overrideLoading":"1",
                                                     "host":self], withCache: { (cacheString) in
         }, andCompletion: { (response, errorCode, error, isValid, object) in
             let result = response?.dictionize() ?? [:]
                                                 
-            if result.getValueFromKey("error_code") != "0" || result["result"] is NSNull {
-                self.showToast(response?.dictionize().getValueFromKey("error_msg") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("error_msg"), andPos: 0)
+            if result.getValueFromKey("ERR_CODE") != "0" || result["RESULT"] is NSNull {
+                self.showToast(response?.dictionize().getValueFromKey("ERR_MSG") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("ERR_MSG"), andPos: 0)
                 return
             }
                    
-            self.add((response?.dictionize()["result"] as! NSDictionary).reFormat() as? [AnyHashable : Any], andKey: "info")
+            self.add((response?.dictionize()["RESULT"] as! NSDictionary).reFormat() as? [AnyHashable : Any], andKey: "info")
 
             Information.saveInfo()
             
@@ -105,8 +106,9 @@ class Weather_Info_ViewController: UIViewController, MFMessageComposeViewControl
     }
     
     func didEditAvatar() {
-         LTRequest.sharedInstance()?.didRequestInfo(["cmd_code":"updateUserInfo",
+         LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"updateUserInfo",
                                                       "session":Information.token ?? "",
+                                                      "deviceId":self.deviceUUID() ?? "",
                                                       "avatar":(self.avatarTemp.imageScaledToHalf() as UIImage).fullImageString(),
                                                       "overrideAlert":"1",
                                                       "overrideLoading":"1",
@@ -114,8 +116,8 @@ class Weather_Info_ViewController: UIViewController, MFMessageComposeViewControl
          }, andCompletion: { (response, errorCode, error, isValid, object) in
              let result = response?.dictionize() ?? [:]
                                                  
-             if result.getValueFromKey("error_code") != "0" || result["result"] is NSNull {
-                 self.showToast(response?.dictionize().getValueFromKey("error_msg") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("error_msg"), andPos: 0)
+             if result.getValueFromKey("ERR_CODE") != "0" || result["RESULT"] is NSNull {
+                 self.showToast(response?.dictionize().getValueFromKey("ERR_MSG") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("ERR_MSG"), andPos: 0)
                  return
              }
           
@@ -126,20 +128,21 @@ class Weather_Info_ViewController: UIViewController, MFMessageComposeViewControl
      }
     
     func didGetPackage(showMenu: Bool) {
-        LTRequest.sharedInstance()?.didRequestInfo(["cmd_code":"getPackageInfo",
+        LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"getPackageInfo",
                                                     "session": Information.token ?? "",
+                                                    "deviceId":self.deviceUUID() ?? "",
                                                     "overrideAlert":"1",
                                                     "overrideLoading":"1",
                                                     "host":self], withCache: { (cacheString) in
         }, andCompletion: { (response, errorCode, error, isValid, object) in
             let result = response?.dictionize() ?? [:]
                           
-            if result.getValueFromKey("error_code") != "0" || result["result"] is NSNull {
-                self.showToast(response?.dictionize().getValueFromKey("error_msg") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("error_msg"), andPos: 0)
+            if result.getValueFromKey("ERR_CODE") != "0" || result["RESULT"] is NSNull {
+                self.showToast(response?.dictionize().getValueFromKey("ERR_MSG") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("ERR_MSG"), andPos: 0)
                 return
             }
                     
-            let info = ((result["result"] as! NSArray)[0] as! NSDictionary)
+            let info = ((result["RESULT"] as! NSArray)[0] as! NSDictionary)
             
             self.package.text = info.getValueFromKey("status") == "1" ? info.getValueFromKey("name") : "Chưa đăng ký"
             

@@ -10,9 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PC_Weather_Main_ViewController" customModule="Nhà_Nông_Xanh" customModuleProvider="target">
             <connections>
+                <outlet property="back" destination="bSy-0B-PVM" id="dy9-E4-BgR"/>
                 <outlet property="bg" destination="5JZ-Zq-gcv" id="YZx-eg-sr9"/>
                 <outlet property="bottomView" destination="k9t-Hi-1Nd" id="xyI-sg-nmf"/>
                 <outlet property="coverView" destination="UI6-Jw-BaY" id="l8k-FK-82h"/>
+                <outlet property="search" destination="nF2-2N-4Ev" id="4N5-XR-fqO"/>
                 <outlet property="tableView" destination="Nam-3f-BRw" id="NEB-D9-KXG"/>
                 <outlet property="titleLabel" destination="Hi2-2t-4Rs" id="osG-oK-mmp"/>
                 <outlet property="view" destination="WcU-AH-bP5" id="4Ah-O9-OoH"/>
@@ -82,7 +84,7 @@
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5JZ-Zq-gcv">
-                    <rect key="frame" x="0.0" y="64" width="375.00000000000006" height="603"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <color key="backgroundColor" red="0.0" green="0.63921568630000003" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
                 <tableView clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nam-3f-BRw" customClass="OwnTableView" customModule="Nhà_Nông_Xanh" customModuleProvider="target">

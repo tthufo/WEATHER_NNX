@@ -57,6 +57,7 @@
     
     [commentView addSubview:contentView];
     
+
     return commentView;
 }
 
@@ -98,6 +99,10 @@
         [self close];
     }];
   
+    UIButton * reg = (UIButton*)[self withView:contentView tag:12];
+    
+    [reg setTitle:[dict getValueFromKey:@"name"] forState:UIControlStateNormal];
+    
     [commentView addSubview:contentView];
     
     return commentView;

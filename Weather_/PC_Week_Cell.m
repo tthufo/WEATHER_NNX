@@ -143,7 +143,7 @@
     
     UIImageView * bg = (UIImageView*)[self withView:cell tag:90];
 
-    bg.alpha = indexPath.row % 2 != 0;
+    bg.alpha = indexPath.row % 2 == 0;
     
     return cell;
 }

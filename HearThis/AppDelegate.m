@@ -34,21 +34,21 @@
 {
     [[LTRequest sharedInstance] initRequestWithWatch:^(NSDictionary *response) {
         NSLog(@"%@", response);
-        if ([response responseForKey:@"ERR_CODE"] && [[response getValueFromKey:@"ERR_CODE"] isEqualToString:@"-1"]) {
-            if ([self.window.rootViewController isEmbed]) {
-                [self.window.rootViewController unEmbed];
-            }
-            [Information removeInfo];
-            
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC);
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                                
-                [[self.window.rootViewController CENTER] presentViewController:[[self.window.rootViewController CENTER] loginNavWithType:@"logOut" callBack:^(id obj) {
-                    
-                }] animated:YES completion:nil];
-                
-            });
-        }
+//        if ([response responseForKey:@"ERR_CODE"] && [[response getValueFromKey:@"ERR_CODE"] isEqualToString:@"-1"]) {
+//            if ([self.window.rootViewController isEmbed]) {
+//                [self.window.rootViewController unEmbed];
+//            }
+//            [Information removeInfo];
+//            
+//            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC);
+//            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//                                
+//                [[self.window.rootViewController CENTER] presentViewController:[[self.window.rootViewController CENTER] loginNavWithType:@"logOut" callBack:^(id obj) {
+//                    
+//                }] animated:YES completion:nil];
+//                
+//            });
+//        }
     }];
     
     [[FirePush shareInstance] didRegister];

@@ -37,4 +37,6 @@
 
 #import "PC_Week_Cell.h"
 
+#import "NN_Root_ViewController.h"
+
 //#import "MXParallaxHeader.h"

@@ -183,18 +183,19 @@ class TG_Intro_ViewController: UIViewController {
     }
     
     @objc func didRequestLogout() {
-        LTRequest.sharedInstance()?.didRequestInfo(["cmd_code":"logout",
+        LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"logout",
                                                     "session":Information.token ?? "",
+                                                    "deviceId":self.deviceUUID() ?? "",
                                                     "push_token": FirePush.shareInstance()?.deviceToken() ?? self.uniqueDeviceId() as Any,
                                                     "overrideAlert":"1",
                                                     ], withCache: { (cacheString) in
         }, andCompletion: { (response, errorCode, error, isValid, object) in
-            let result = response?.dictionize() ?? [:]
-                                                                                 
-            if (error != nil) || result.getValueFromKey("error_code") != "0" || result["result"] is NSNull {
-                self.showToast(response?.dictionize().getValueFromKey("error_msg") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("error_msg"), andPos: 0)
-                return
-            }
+//            let result = response?.dictionize() ?? [:]
+//                                                                                 
+//            if (error != nil) || result.getValueFromKey("ERR_CODE") != "0" || result["RESULT"] is NSNull {
+//                self.showToast(response?.dictionize().getValueFromKey("ERR_MSG") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("ERR_MSG"), andPos: 0)
+//                return
+//            }
             
             Information.removeInfo()
 
@@ -354,8 +355,8 @@ extension TG_Intro_ViewController: UITableViewDataSource, UITableViewDelegate {
                    DropAlert.shareInstance()?.alert(withInfor: ["cancel":"Thoát", "buttons":["Đăng xuất"], "title":"Thông báo", "message": "Bạn có muốn đăng xuất khỏi tài khoản ?"], andCompletion: { (index, objc) in
                        if index == 0 {
                         self.didRequestLogout()
-                        if (self.topviewcontroler()?.isKind(of: PC_Weather_Main_ViewController.self))! {
-                            (self.topviewcontroler() as! PC_Weather_Main_ViewController).tableView.setContentOffset(CGPoint.zero, animated:true)
+                        if (self.topviewcontroler()?.isKind(of: NN_Root_ViewController.self))! {
+                            (self.topviewcontroler() as! NN_Root_ViewController).didResetLogout()
                         }
                        }
                    })

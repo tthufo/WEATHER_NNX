@@ -88,14 +88,15 @@ class Weather_Name_ViewController: UIViewController , UITextFieldDelegate {
                                                     "old_password":oldPass.text as Any,
 //                                                    "new_password":newPass.text as Any,
                                                     "session":Information.token ?? "",
+                                                    "deviceId":self.deviceUUID() ?? "",
                                                     "overrideLoading":"1",
                                                     "overrideAlert":"1",
                                                     "host":self], withCache: { (cacheString) in
         }, andCompletion: { (response, errorCode, error, isValid, object) in
             let result = response?.dictionize() ?? [:]
 
-            if result.getValueFromKey("error_code") != "0" || result["result"] is NSNull {
-                self.showToast(response?.dictionize().getValueFromKey("error_msg") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("error_msg"), andPos: 0)
+            if result.getValueFromKey("ERR_CODE") != "0" || result["RESULT"] is NSNull {
+                self.showToast(response?.dictionize().getValueFromKey("ERR_MSG") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("ERR_MSG"), andPos: 0)
                 return
             }
                         
@@ -113,8 +114,9 @@ class Weather_Name_ViewController: UIViewController , UITextFieldDelegate {
     
       @IBAction func didPressEdit() {
            self.view.endEditing(true)
-           LTRequest.sharedInstance()?.didRequestInfo(["cmd_code":"updateUserInfo",
+           LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"updateUserInfo",
                                                         "session":Information.token ?? "",
+                                                        "deviceId":self.deviceUUID() ?? "",
                                                         "name":oldPass.text as Any,
                                                         "overrideAlert":"1",
                                                         "overrideLoading":"1",
@@ -122,8 +124,8 @@ class Weather_Name_ViewController: UIViewController , UITextFieldDelegate {
            }, andCompletion: { (response, errorCode, error, isValid, object) in
                let result = response?.dictionize() ?? [:]
                                                    
-               if result.getValueFromKey("error_code") != "0" || result["result"] is NSNull {
-                   self.showToast(response?.dictionize().getValueFromKey("error_msg") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("error_msg"), andPos: 0)
+               if result.getValueFromKey("ERR_CODE") != "0" || result["RESULT"] is NSNull {
+                   self.showToast(response?.dictionize().getValueFromKey("ERR_MSG") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("ERR_MSG"), andPos: 0)
                    return
                }
             

@@ -48,14 +48,14 @@
     if ([[ver objectAtIndex:0] intValue] >= 7)
     {
         {
-            self.navigationController.navigationBar.barTintColor = [AVHexColor colorWithHexString:kColor];
+            self.navigationController.navigationBar.barTintColor = [AVHexColor colorWithHexString:@"#00A34B"];
             self.navigationController.navigationBar.translucent = NO;
         }
     }
     else
     {
         {
-            self.navigationController.navigationBar.tintColor = [AVHexColor colorWithHexString:kColor];
+            self.navigationController.navigationBar.tintColor = [AVHexColor colorWithHexString:@"#00A34B"];
         }
     }
      
