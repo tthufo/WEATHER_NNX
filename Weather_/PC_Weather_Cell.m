@@ -90,7 +90,7 @@
 
     down.text = [NSString stringWithFormat:@"%@°↓", [self returnValue:@"temperatureLow"]];
 
-    current.text = [NSString stringWithFormat:@"Thực tế ~ %@°", [self returnValue:@"apparentTemperature"]];
+    current.text = [NSString stringWithFormat:@"Cảm giác như %@°", [self returnValue:@"apparentTemperature"]];
     
     rainy.text = [NSString stringWithFormat:@"Khả năng mưa %@ %@", [self returnValue:@"precipProbability"], @"%"];
         

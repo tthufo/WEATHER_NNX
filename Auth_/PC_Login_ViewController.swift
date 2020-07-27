@@ -366,7 +366,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate, MFMessageC
         
         if (MFMessageComposeViewController.canSendText()) {
              let controller = MFMessageComposeViewController()
-             controller.body = "NXX"
+             controller.body = "XNN"
              controller.recipients = ["1595"]
              controller.messageComposeDelegate = self
              self.present(controller, animated: true, completion: nil)

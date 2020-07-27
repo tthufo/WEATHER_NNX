@@ -49,7 +49,7 @@ class TG_Intro_ViewController: UIViewController {
                            ["title": "Website", "icon": "ico_website"],
                            ["title": "Liên hệ", "icon": "ico_contact"],
                            ["title": "Tổng đài hỗ trợ", "icon": "ico_support"],
-                           ["title": "Đăng xuất", "icon": "ico_guide"],
+                           ["title": logged() ? "Đăng xuất" : "Đăng nhập", "icon": "ico_guide"],
           //                 ["title": logged() ? "Đăng xuất" : "Đăng nhập", "icon": "ico_logout"],
                        ]
         
@@ -95,8 +95,8 @@ class TG_Intro_ViewController: UIViewController {
                   ["title": "Website", "icon": "ico_website"],
                   ["title": "Liên hệ", "icon": "ico_contact"],
                   ["title": "Tổng đài hỗ trợ", "icon": "ico_support"],
-                  ["title": "Đăng xuất", "icon": "ico_guide"],
-//                 ["title": logged() ? "Đăng xuất" : "Đăng nhập", "icon": "ico_logout"],
+//                  ["title": "Đăng xuất", "icon": "ico_guide"],
+                 ["title": logged() ? "Đăng xuất" : "Đăng nhập", "icon": "ico_guide"],
              ]
         
 //        tableView.refreshControl = refreshControl

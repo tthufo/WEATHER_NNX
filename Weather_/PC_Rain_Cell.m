@@ -95,7 +95,7 @@
     
     [collectionView reloadData];
         
-    rainy.text = [NSString stringWithFormat:@"Tổng lượng mưa trong ngày %@", [self returnVal:data[@"currently"][@"precipIntensity"]]];
+    rainy.text = [NSString stringWithFormat:@"Tổng lượng mưa trong ngày %@ mm", [self returnVal:data[@"currently"][@"precipIntensity"]]];
 }
 
 - (NSString*)returnVal:(NSString*)val {

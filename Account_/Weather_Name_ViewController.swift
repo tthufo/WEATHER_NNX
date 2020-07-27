@@ -24,6 +24,8 @@ class Weather_Name_ViewController: UIViewController , UITextFieldDelegate {
 
     @IBOutlet var submit: UIButton!
     
+    @IBOutlet var bgView: UIView!
+
     var uName: String!
     
     override func viewDidLoad() {
@@ -33,7 +35,7 @@ class Weather_Name_ViewController: UIViewController , UITextFieldDelegate {
 
         }
         
-        kb = KeyBoard.shareInstance()
+//        kb = KeyBoard.shareInstance()
         
         self.view.action(forTouch: [:]) { (obj) in
             self.view.endEditing(true)
@@ -45,11 +47,15 @@ class Weather_Name_ViewController: UIViewController , UITextFieldDelegate {
         submit.alpha = oldPass.text?.count != 0 ? 1 : 0.5
                 
         oldPass.addTarget(self, action: #selector(textOldIsChanging), for: .editingChanged)
+        
+        bgView.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
+
+        self.bgView.backgroundColor = (oldPass.text?.count != 0) ? .green : .clear
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        kb.keyboardOff()
+//        kb.keyboardOff()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,9 +67,9 @@ class Weather_Name_ViewController: UIViewController , UITextFieldDelegate {
         
         self.tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
         
-        kb.keyboard { (height, isOn) in
-            self.tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: isOn ? (height - 100) : 0, right: 0)
-        }
+//        kb.keyboard { (height, isOn) in
+//            self.tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: isOn ? (height - 100) : 0, right: 0)
+//        }
     }
     
     @IBAction func didPressBack() {
@@ -151,6 +157,7 @@ class Weather_Name_ViewController: UIViewController , UITextFieldDelegate {
     @objc func textOldIsChanging(_ textField:UITextField) {
         submit.isEnabled = oldPass.text?.count != 0
         submit.alpha = oldPass.text?.count != 0 ? 1 : 0.5
+        self.bgView.backgroundColor = (oldPass.text?.count != 0) ? .green : .clear
     }
     
 //    @objc func textIsChanging(_ textField:UITextField) {

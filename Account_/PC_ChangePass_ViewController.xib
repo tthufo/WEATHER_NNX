@@ -10,9 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PC_ChangePass_ViewController" customModule="Nhà_Nông_Xanh" customModuleProvider="target">
             <connections>
+                <outlet property="bgView" destination="Ftj-4W-xee" id="KkQ-gB-V8I"/>
                 <outlet property="cell1" destination="C9P-IU-l8d" id="pet-F2-zHt"/>
                 <outlet property="cell2" destination="jEv-qe-6ZY" id="PqO-4U-lho"/>
                 <outlet property="cell3" destination="EZg-eY-sOX" id="DGa-vV-VD6"/>
+                <outlet property="cell4" destination="kMQ-0i-bQC" id="3F5-Lf-aFn"/>
                 <outlet property="newPass" destination="q0a-5x-zEk" id="JMu-3W-mQU"/>
                 <outlet property="newPassErr" destination="hDV-Pc-iIO" id="M4q-9L-NwR"/>
                 <outlet property="oldPass" destination="oeM-XT-BsP" id="nbz-Io-oh8"/>
@@ -20,7 +22,7 @@
                 <outlet property="reNewBg" destination="D6l-IG-goW" id="hRK-k7-hby"/>
                 <outlet property="reNewPass" destination="j2F-L0-Ayu" id="yZy-af-4Uk"/>
                 <outlet property="reNewPassErr" destination="W0R-Ve-mLp" id="RE1-21-R2X"/>
-                <outlet property="submit" destination="tYc-ER-5me" id="xGr-Fr-w1i"/>
+                <outlet property="submit" destination="gGS-5f-4Rk" id="PCT-Is-8pz"/>
                 <outlet property="tableView" destination="YSN-MN-HOD" id="651-4E-L1s"/>
                 <outlet property="view" destination="6xS-eQ-zYK" id="iep-QR-fRf"/>
             </connections>
@@ -54,7 +56,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYc-ER-5me">
+                        <button hidden="YES" opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYc-ER-5me">
                             <rect key="frame" x="360" y="10" width="44" height="44"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -360,9 +362,62 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <point key="canvasLocation" x="-1049.2753623188407" y="261.83035714285711"/>
         </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="kMQ-0i-bQC">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kMQ-0i-bQC" id="eg1-KP-W5x">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ftj-4W-xee">
+                        <rect key="frame" x="115" y="24" width="184" height="52"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="52" id="GCP-eR-1a3"/>
+                            <constraint firstAttribute="width" constant="184" id="NCU-ep-smP"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="26"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <button opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGS-5f-4Rk">
+                        <rect key="frame" x="115" y="24" width="184" height="52"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="52" id="5dS-fT-HVH"/>
+                            <constraint firstAttribute="width" constant="184" id="Rut-iH-lwn"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                        <state key="normal" title="LƯU MẬT KHẨU" backgroundImage="gradient">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="26"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="didPressSubmit" destination="-1" eventType="touchUpInside" id="qvM-As-kho"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="gGS-5f-4Rk" firstAttribute="centerY" secondItem="eg1-KP-W5x" secondAttribute="centerY" id="6kV-Am-h7I"/>
+                    <constraint firstItem="gGS-5f-4Rk" firstAttribute="centerX" secondItem="eg1-KP-W5x" secondAttribute="centerX" id="eC0-Se-rPf"/>
+                    <constraint firstItem="Ftj-4W-xee" firstAttribute="centerX" secondItem="eg1-KP-W5x" secondAttribute="centerX" id="fgk-PS-hys"/>
+                    <constraint firstItem="Ftj-4W-xee" firstAttribute="centerY" secondItem="eg1-KP-W5x" secondAttribute="centerY" id="sme-Kf-gPM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <point key="canvasLocation" x="-1046.376811594203" y="372.32142857142856"/>
+        </tableViewCell>
     </objects>
     <resources>
         <image name="design_ic_visibility" width="29" height="29"/>
+        <image name="gradient" width="149.5" height="32"/>
         <image name="icon_back" width="33" height="33"/>
         <image name="leku_ic_check_light" width="33" height="33"/>
         <image name="new_pass" width="26.5" height="26.5"/>

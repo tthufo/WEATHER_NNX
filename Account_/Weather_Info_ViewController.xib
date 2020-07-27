@@ -98,7 +98,7 @@
                                 <constraint firstAttribute="height" constant="50" id="DiL-5W-XmW"/>
                                 <constraint firstAttribute="width" constant="50" id="VnM-ib-5uv"/>
                             </constraints>
-                            <state key="normal" backgroundImage="btn_photo"/>
+                            <state key="normal" backgroundImage="icon_camera_green"/>
                             <connections>
                                 <action selector="didPressImage" destination="-1" eventType="touchUpInside" id="25o-E0-BPm"/>
                             </connections>
@@ -337,8 +337,8 @@
     </objects>
     <resources>
         <image name="bg_m-1" width="83.5" height="82.5"/>
-        <image name="btn_photo" width="33" height="33"/>
         <image name="ic_default_avatar" width="103.5" height="103.5"/>
+        <image name="icon_camera_green" width="47.5" height="47.5"/>
         <image name="icon_close" width="33" height="33"/>
     </resources>
 </document>

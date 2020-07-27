@@ -173,7 +173,7 @@ extension UIImageView {
     }
     
     @objc func imageUrl (url: String) {
-        self.sd_setImage(with: NSURL.init(string: (url as NSString).encodeUrl())! as URL, placeholderImage: UIImage.init(named: "ic_default_avatar")) { (image, error, cacheType, url) in
+        self.sd_setImage(with: NSURL.init(string: (url as NSString).encodeUrl())! as URL, placeholderImage: UIImage.init(named: "bg_thumb_default_img_1")) { (image, error, cacheType, url) in
             if error != nil {
                 return
             }

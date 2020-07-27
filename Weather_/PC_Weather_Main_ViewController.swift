@@ -178,7 +178,7 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
                                                "page_index": 1,
                                                "page_size": 24,
                                                "position": 1,
-            ], "height": self.screenHeight() - 44, "loaded": false, "ident": "PC_Weather_Cell"],
+            ], "height": 455, "loaded": false, "ident": "PC_Weather_Cell"],
                                       
                                       
                                       
@@ -386,7 +386,7 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
                 return
             }
                     
-//            let info = ((result["RESULT"] as! NSArray)[0] as! NSDictionary)
+            let info = ((result["RESULT"] as! NSArray)[0] as! NSDictionary)
                         
             if showMenu {
                 self.registered = self.checkRegister(package: response?.dictionize()["RESULT"] as! NSArray)
@@ -394,17 +394,17 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
                 if self.registered {
                     self.center()?.pushViewController(PC_Search_Weather_ViewController.init(), animated: true)
                 } else {
-                    EM_MenuView.init(packageShow: ["info": "Để sử dụng đầy đủ tính năng của ứng dụng, Quý khách cần kích hoạt dịch vụ. Để kích hoạt dịch vụ, soạn tin V gửi 1095."]).show { (index, objc, menu) in
-//                        if index == 0 {
-//                            let data = (objc as! NSDictionary)
-//                            if (MFMessageComposeViewController.canSendText()) {
-//                                 let controller = MFMessageComposeViewController()
-//                                 controller.body = data.getValueFromKey("reg_keyword")
-//                                 controller.recipients = [data.getValueFromKey("reg_shortcode")]
-//                                 controller.messageComposeDelegate = self
-//                                 self.present(controller, animated: true, completion: nil)
-//                             }
-//                        }
+                    EM_MenuView.init(package: (info as! [AnyHashable : Any])).show { (index, objc, menu) in
+                        if index == 0 {
+                            let data = (objc as! NSDictionary)
+                            if (MFMessageComposeViewController.canSendText()) {
+                                 let controller = MFMessageComposeViewController()
+                                 controller.body = data.getValueFromKey("reg_keyword")
+                                 controller.recipients = [data.getValueFromKey("reg_shortcode")]
+                                 controller.messageComposeDelegate = self
+                                 self.present(controller, animated: true, completion: nil)
+                             }
+                        }
                     }
                 }
             }
@@ -419,15 +419,15 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
     }
     
     @IBAction func didPressRegister() {
-        EM_MenuView.init(packageShow: ["info": "Để đăng ký tài khoản, soạn tin nhắn MK gửi 1095."]).show { (index, objc, menu) in
-      }
-//       if (MFMessageComposeViewController.canSendText()) {
-//              let controller = MFMessageComposeViewController()
-//              controller.body = "V"
-//              controller.recipients = ["1095"]
-//              controller.messageComposeDelegate = self
-//              self.present(controller, animated: true, completion: nil)
-//          }
+//        EM_MenuView.init(packageShow: ["info": "Để đăng ký tài khoản, soạn tin nhắn MK gửi 1095."]).show { (index, objc, menu) in
+//      }
+        if (MFMessageComposeViewController.canSendText()) {
+            let controller = MFMessageComposeViewController()
+            controller.body = "DKN"
+            controller.recipients = ["1595"]
+            controller.messageComposeDelegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
     }
 }
 

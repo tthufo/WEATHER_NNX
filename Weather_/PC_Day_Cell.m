@@ -76,9 +76,7 @@
     for (NSDictionary * k in keys) {
         [dataList addObject:@{@"val": [datas getValueFromKey: k[@"key"]], @"unit": k[@"unit"], @"img":  k[@"img"], @"name": k[@"name"]}];
     }
-    
-    NSLog(@"+++%@", dataList);
-                            
+                                
     [collectionView reloadData];
 }
 
@@ -116,7 +114,7 @@
     
     UILabel * percent = (UILabel*)[self withView:cell tag:10];
     
-    percent.text = [NSString stringWithFormat:@"%@", [self.parentViewController returnVal:[dict getValueFromKey:@"val"] unit:[dict getValueFromKey:@"unit"]]];
+    percent.text = [NSString stringWithFormat:@"%@", [self.parentViewController returnValCurrent:[dict getValueFromKey:@"val"] unit:[dict getValueFromKey:@"unit"]]];
     
     UIImageView * img = (UIImageView*)[self withView:cell tag:11];
 

@@ -30,6 +30,8 @@ class PC_ChangePass_ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var cell3: UITableViewCell!
     
+    @IBOutlet var cell4: UITableViewCell!
+
     @IBOutlet var oldPass: UITextField!
     
     @IBOutlet var newPass: UITextField!
@@ -44,6 +46,8 @@ class PC_ChangePass_ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var reNewPassErr: UILabel!
     
+    @IBOutlet var bgView: UIView!
+
 //    @IBOutlet var bottomHeight: NSLayoutConstraint!
 //    
 //    @IBOutlet var sideGapLeft: NSLayoutConstraint!
@@ -79,6 +83,9 @@ class PC_ChangePass_ViewController: UIViewController, UITextFieldDelegate {
         oldPass.addTarget(self, action: #selector(textOldIsChanging), for: .editingChanged)
         newPass.addTarget(self, action: #selector(textOldIsChanging), for: .editingChanged)
         reNewPass.addTarget(self, action: #selector(textIsChanging), for: .editingChanged)
+        
+        bgView.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -161,6 +168,7 @@ class PC_ChangePass_ViewController: UIViewController, UITextFieldDelegate {
     @objc func textOldIsChanging(_ textField:UITextField) {
         submit.isEnabled = oldPass.text?.count != 0 && newPass.text?.count != 0 && reNewPass.text?.count != 0 && newPass.text == reNewPass.text
         submit.alpha = oldPass.text?.count != 0 && newPass.text?.count != 0 && reNewPass.text?.count != 0 && newPass.text == reNewPass.text ? 1 : 0.5
+        self.bgView.backgroundColor = (oldPass.text?.count != 0 && newPass.text?.count != 0 && reNewPass.text?.count != 0 && newPass.text == reNewPass.text) ? .green : .clear
     }
     
     @objc func textIsChanging(_ textField:UITextField) {
@@ -170,22 +178,23 @@ class PC_ChangePass_ViewController: UIViewController, UITextFieldDelegate {
         
         submit.isEnabled = oldPass.text?.count != 0 && newPass.text?.count != 0 && reNewPass.text?.count != 0 && newPass.text == reNewPass.text
         submit.alpha = oldPass.text?.count != 0 && newPass.text?.count != 0 && reNewPass.text?.count != 0 && newPass.text == reNewPass.text ? 1 : 0.5
+        self.bgView.backgroundColor = (oldPass.text?.count != 0 && newPass.text?.count != 0 && reNewPass.text?.count != 0 && newPass.text == reNewPass.text) ? .green : .clear
     }
 }
 
 extension PC_ChangePass_ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row == 2 ? 191 : 94
+        return indexPath.row == 3 ? 191 : 94
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return indexPath.row == 0 ? cell1 : indexPath.row == 1 ? cell2 : cell3
+        return indexPath.row == 0 ? cell1 : indexPath.row == 1 ? cell2 : indexPath.row == 2 ? cell3 : cell4
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
