@@ -199,16 +199,17 @@ class PC_Forgot_ViewController: UIViewController , UITextFieldDelegate {
             validPhone()
             return
         }
-        LTRequest.sharedInstance()?.didRequestInfo(["cmd_code":"forgetPassword",
+        LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"forgetPassword",
                                                     "msisdn":convertPhone(),
+                                                    "deviceId":self.deviceUUID() ?? "",
                                                     "overrideAlert":"1",
                                                     "overrideLoading":"1",
                                                     "host":self], withCache: { (cacheString) in
         }, andCompletion: { (response, errorCode, error, isValid, object) in
             let result = response?.dictionize() ?? [:]
                                     
-            if result.getValueFromKey("error_code") != "0" || result["result"] is NSNull {
-               self.showToast(response?.dictionize().getValueFromKey("error_msg") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("error_msg"), andPos: 0)
+            if result.getValueFromKey("ERR_CODE") != "0" || result["RESULT"] is NSNull {
+               self.showToast(response?.dictionize().getValueFromKey("ERR_MSG") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("ERR_MSG"), andPos: 0)
                 return
             }
             

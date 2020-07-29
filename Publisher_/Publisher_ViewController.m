@@ -8,7 +8,7 @@
 
 #import "Publisher_ViewController.h"
 
-#import "Nhà_Nông_Xanh-Swift.h"
+#import "NNX-Swift.h"
 
 @interface Publisher_ViewController ()
 {

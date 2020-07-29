@@ -18,7 +18,7 @@
 
 #import "Reachability.h"
 
-#import "Nhà_Nông_Xanh-Swift.h"
+#import "NNX-Swift.h"
 
 #import <AVFoundation/AVFoundation.h>
 
@@ -93,7 +93,7 @@
     
     [view withBorder:@{@"Bcorner":@(4)}];
     
-    view.backgroundColor = [AVHexColor colorWithHexString:kColor];
+    view.backgroundColor = [AVHexColor colorWithHexString:@"#00A34B"];
     
     view.frame = CGRectMake(0, 0, screenWidth1, screenHeight1);
     

@@ -215,7 +215,7 @@ extension TG_Intro_ViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        if check() && indexPath.row == 3 { return 10 }
-        return 55 //check() ? [0, 1, 4, 5, 8].contains(indexPath.row) ? 0 : UITableView.automaticDimension : UITableView.automaticDimension
+        return check() ? [0, 1, 3, 7].contains(indexPath.row) ? 0 : 55 : 55
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

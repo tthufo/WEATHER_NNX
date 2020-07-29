@@ -107,7 +107,7 @@ class Weather_Info_ViewController: UIViewController, MFMessageComposeViewControl
     
     func didEditAvatar() {
          LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"updateUserInfo",
-                                                      "session":Information.token ?? "",
+//                                                      "session":Information.token ?? "",
                                                       "deviceId":self.deviceUUID() ?? "",
                                                       "avatar":(self.avatarTemp.imageScaledToHalf() as UIImage).fullImageString(),
                                                       "overrideAlert":"1",
@@ -115,7 +115,9 @@ class Weather_Info_ViewController: UIViewController, MFMessageComposeViewControl
                                                       "host":self], withCache: { (cacheString) in
          }, andCompletion: { (response, errorCode, error, isValid, object) in
              let result = response?.dictionize() ?? [:]
-                                                 
+                                              
+            print(response, error)
+            
              if result.getValueFromKey("ERR_CODE") != "0" || result["RESULT"] is NSNull {
                  self.showToast(response?.dictionize().getValueFromKey("ERR_MSG") == "" ? "Lỗi xảy ra, mời bạn thử lại" : response?.dictionize().getValueFromKey("ERR_MSG"), andPos: 0)
                  return

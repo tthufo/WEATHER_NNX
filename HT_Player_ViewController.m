@@ -12,7 +12,7 @@
 
 #import "HT_Player_Item.h"
 
-#import "Nhà_Nông_Xanh-Swift.h"
+#import "NNX-Swift.h"
 
 @import ParallaxHeader;
 

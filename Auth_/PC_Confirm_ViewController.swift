@@ -80,13 +80,13 @@ class PC_Confirm_ViewController: UIViewController , UITextFieldDelegate {
 
         var frame = logo.frame
         
-        frame.origin.y = CGFloat(self.screenHeight() - 140) / 2
+        frame.origin.y = CGFloat(self.screenHeight() - 120) / 2
         
-        frame.origin.x = CGFloat(self.screenWidth() - 150) / 2
+        frame.origin.x = CGFloat(self.screenWidth() - 110) / 2
               
-        frame.size.width = CGFloat(150)
+        frame.size.width = CGFloat(110)
         
-        frame.size.height = CGFloat(150)
+        frame.size.height = CGFloat(110)
         
         logo.frame = frame
         
@@ -96,7 +96,7 @@ class PC_Confirm_ViewController: UIViewController , UITextFieldDelegate {
             self.cover.alpha = bbgg ? 0.3 : 0
         }) { (done) in
             UIView.transition(with: self.bg, duration: 1.5, options: .transitionCrossDissolve, animations: {
-                self.bg.image = bbgg ? Information.bbgg!.stringImage() : UIImage(named: "bg-1")
+                self.bg.image = bbgg ? Information.bbgg!.stringImage() : UIImage(named: "ic_bgr_01")
             }, completion: { (done) in
                 UIView.animate(withDuration: 1.5, animations: {
                     self.cover.alpha = 0

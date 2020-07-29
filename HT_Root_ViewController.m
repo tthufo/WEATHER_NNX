@@ -16,7 +16,7 @@
 
 #import "Third_Tab_ViewController.h"
 
-#import "Nhà_Nông_Xanh-Swift.h"
+#import "NNX-Swift.h"
 
 #import <StoreKit/StoreKit.h>
 

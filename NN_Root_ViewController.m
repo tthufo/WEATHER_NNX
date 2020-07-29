@@ -16,7 +16,7 @@
 
 #import "Third_Tab_ViewController.h"
 
-#import "Nhà_Nông_Xanh-Swift.h"
+#import "NNX-Swift.h"
 
 @interface NN_Root_ViewController ()<UIGestureRecognizerDelegate>
 {
@@ -39,6 +39,23 @@
 //    [pan setEdges:UIRectEdgeLeft];
 //    [pan setDelegate:self];
 //    [self.view addGestureRecognizer:pan];
+    
+    UIImageView * view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
+      
+    [view withBorder:@{@"Bcorner":@(4)}];
+  
+    view.backgroundColor = [AVHexColor colorWithHexString:@"#00A34B"];
+  
+    view.frame = CGRectMake(0, 0, screenWidth1, screenHeight1);
+  
+    [self.view addSubview:view];
+    
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.5 * NSEC_PER_SEC);
+      dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+
+          [view removeFromSuperview];
+
+      });
 }
 
 - (void)handlePan:(id)sender

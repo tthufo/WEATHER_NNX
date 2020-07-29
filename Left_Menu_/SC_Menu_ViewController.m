@@ -8,7 +8,7 @@
 
 #import "SC_Menu_ViewController.h"
 
-#import "Nhà_Nông_Xanh-Swift.h"
+#import "NNX-Swift.h"
 
 @interface SC_Menu_ViewController ()
 {

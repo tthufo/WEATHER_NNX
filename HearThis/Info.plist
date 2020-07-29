@@ -2,12 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIStatusBarHidden</key>
-	<false/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>Nhà Nông Xanh</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -30,15 +28,15 @@
 		<true/>
 	</dict>
 	<key>NSAppleMusicUsageDescription</key>
-	<string>MEWEATHER cần sử dụng Bộ sưu tập nhạc của bạn</string>
+	<string>Nhà Nông Xanh cần sử dụng Bộ sưu tập nhạc của bạn</string>
 	<key>NSCameraUsageDescription</key>
-	<string>MEWEATHER cần sử dụng Camera của bạn cho việc cập nhật thông tin</string>
+	<string>Nhà Nông Xanh cần sử dụng Camera của bạn cho việc cập nhật thông tin</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>MEWEATHER cần sử dụng Vị trí của bạn cho việc cập nhật thuận tiện</string>
+	<string>Nhà Nông Xanh cần sử dụng Vị trí của bạn cho việc cập nhật thuận tiện</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>MEWEATHER cần sử dụng Microphone của bạn cho việc thu âm</string>
+	<string>Nhà Nông Xanh cần sử dụng Microphone của bạn cho việc thu âm</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>MEWEATHER cần sử dụng Bộ sưu tập của bạn cho việc cập nhật thông tin</string>
+	<string>Nhà Nông Xanh cần sử dụng Bộ sưu tập của bạn cho việc cập nhật thông tin</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
@@ -53,6 +51,8 @@
 	</array>
 	<key>UIRequiresFullScreen</key>
 	<true/>
+	<key>UIStatusBarHidden</key>
+	<false/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleDarkContent</string>
 	<key>UISupportedInterfaceOrientations</key>

@@ -54,7 +54,7 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
         (self.withView(self.bottomView, tag: 11) as! UIButton).isHidden = logged() ? registered ? false : true : false
         (self.withView(self.bottomView, tag: 12) as! UIButton).isHidden = logged() ? registered ? false : true : false
         
-        (self.withView(self.bottomView, tag: 1) as! UILabel).text = logged() ? "Để sử dụng đầy đủ chức năng của ứng dụng, Quý khách cần đăng ký dịch vụ. Để kích hoạt dịch vụ, soạn tin V gửi 1095." : "Để xem thông tin chi tiết mời quý khách đăng nhập để sử dụng."
+        (self.withView(self.bottomView, tag: 1) as! UILabel).text = logged() ? "Để sử dụng đầy đủ chức năng của ứng dụng, Quý khách cần đăng ký dịch vụ. Để kích hoạt dịch vụ, soạn tin DKN gửi 1595." : "Để xem thông tin chi tiết mời quý khách đăng nhập để sử dụng."
         
         self.tableView.isScrollEnabled = logged() && registered
         
@@ -359,7 +359,7 @@ class PC_Weather_Main_ViewController: UIViewController, MFMessageComposeViewCont
     }
     
     func checkRegister(package: NSArray) -> Bool {
-      var isReg = true //false /// debug mode
+      var isReg = false /// debug mode -> true
       for dict in package {
           let expDate = ((dict as! NSDictionary).getValueFromKey("expireTime")! as NSString).date(withFormat: "dd/MM/yyyy")
           if (dict as! NSDictionary).getValueFromKey("status") == "1" && expDate! > Date() {
@@ -486,7 +486,7 @@ extension PC_Weather_Main_ViewController: UITableViewDataSource, UITableViewDele
         }
         
         if pdblLatitude == "0" && pdblLongitude == "0"{
-            self.titleLabel.text = "MEWEATHER"
+            self.titleLabel.text = "Nhà Nông Xanh"
             return
         }
         
@@ -505,7 +505,7 @@ extension PC_Weather_Main_ViewController: UITableViewDataSource, UITableViewDele
                 {
                     print("+++++====>reverse geodcode fail: \(error!.localizedDescription)")
                     
-                    self.titleLabel.text = "MEWEATHER"
+                    self.titleLabel.text = "Nhà Nông Xanh"
 
                     return
                 }

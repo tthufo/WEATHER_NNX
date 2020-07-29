@@ -222,7 +222,7 @@
 		FC130B922446353100D64012 /* Book_Inner_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book_Inner_ViewController.swift; sourceTree = "<group>"; };
 		FC130B932446353100D64012 /* Book_Inner_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Book_Inner_ViewController.xib; sourceTree = "<group>"; };
 		FC1357DD24377B92001BA5B1 /* Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
-		FC1AD7CB1DA40CA8002BA7EC /* Nhà Nông Xanh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nhà Nông Xanh.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC1AD7CB1DA40CA8002BA7EC /* NNX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NNX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC1AD7CF1DA40CA8002BA7EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FC1AD7D11DA40CA8002BA7EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FC1AD7D21DA40CA8002BA7EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -536,7 +536,7 @@
 		FC1AD7CC1DA40CA8002BA7EC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC1AD7CB1DA40CA8002BA7EC /* Nhà Nông Xanh.app */,
+				FC1AD7CB1DA40CA8002BA7EC /* NNX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -966,7 +966,7 @@
 			);
 			name = HearThis;
 			productName = HearThis;
-			productReference = FC1AD7CB1DA40CA8002BA7EC /* Nhà Nông Xanh.app */;
+			productReference = FC1AD7CB1DA40CA8002BA7EC /* NNX.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -980,6 +980,7 @@
 				TargetAttributes = {
 					FC1AD7CA1DA40CA8002BA7EC = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 7546H2CFFT;
 						LastSwiftMigration = 1130;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
@@ -1303,8 +1304,9 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Thanh Hai Tran (2A57FFFJMN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Thanh Hai Tran (2A57FFFJMN)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: AGRIMEDIA WEATHER AND AGRICULTURE SOLUTION JOINT STOCK COMPANY (7546H2CFFT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: AGRIMEDIA WEATHER AND AGRICULTURE SOLUTION JOINT STOCK COMPANY (7546H2CFFT)";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1352,8 +1354,9 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Thanh Hai Tran (2A57FFFJMN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Thanh Hai Tran (2A57FFFJMN)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: AGRIMEDIA WEATHER AND AGRICULTURE SOLUTION JOINT STOCK COMPANY (7546H2CFFT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: AGRIMEDIA WEATHER AND AGRICULTURE SOLUTION JOINT STOCK COMPANY (7546H2CFFT)";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1383,8 +1386,8 @@
 				CODE_SIGN_ENTITLEMENTS = HearThis/MeBook.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development: Nguyen Ngoc Quang (589UWV5PGW)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 15;
+				DEVELOPMENT_TEAM = 7546H2CFFT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1471,7 +1474,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.agri.nxxx;
-				PRODUCT_NAME = "Nhà Nông Xanh";
+				PRODUCT_NAME = NNX;
 				PROVISIONING_PROFILE = "d4f4ddc3-6615-47d3-9900-2f2822cb0a06";
 				PROVISIONING_PROFILE_SPECIFIER = nxxx_dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "HearThis/HearThis-Bridging-Header.h";
@@ -1488,10 +1491,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = HearThis/MeBook.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: Nguyen Ngoc Quang (589UWV5PGW)";
+				CODE_SIGN_IDENTITY = "Apple Distribution: AGRIMEDIA WEATHER AND AGRICULTURE SOLUTION JOINT STOCK COMPANY (7546H2CFFT)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 15;
+				DEVELOPMENT_TEAM = 7546H2CFFT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1578,9 +1581,9 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.agri.nxxx;
-				PRODUCT_NAME = "Nhà Nông Xanh";
+				PRODUCT_NAME = NNX;
 				PROVISIONING_PROFILE = "d4f4ddc3-6615-47d3-9900-2f2822cb0a06";
-				PROVISIONING_PROFILE_SPECIFIER = nxxx_dev;
+				PROVISIONING_PROFILE_SPECIFIER = nxx_dis;
 				SWIFT_OBJC_BRIDGING_HEADER = "HearThis/HearThis-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

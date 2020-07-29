@@ -129,7 +129,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="didPressSubmit" destination="-1" eventType="touchUpInside" id="YVa-iL-GOc"/>
+                        <action selector="didPressEdit" destination="-1" eventType="touchUpInside" id="DPE-tY-oK7"/>
                     </connections>
                 </button>
             </subviews>

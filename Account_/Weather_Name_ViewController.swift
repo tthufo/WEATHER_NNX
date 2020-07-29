@@ -121,7 +121,7 @@ class Weather_Name_ViewController: UIViewController , UITextFieldDelegate {
       @IBAction func didPressEdit() {
            self.view.endEditing(true)
            LTRequest.sharedInstance()?.didRequestInfo(["CMD_CODE":"updateUserInfo",
-                                                        "session":Information.token ?? "",
+//                                                        "session":Information.token ?? "",
                                                         "deviceId":self.deviceUUID() ?? "",
                                                         "name":oldPass.text as Any,
                                                         "overrideAlert":"1",

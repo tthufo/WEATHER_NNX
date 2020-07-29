@@ -61,6 +61,8 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate, MFMessageC
 
         kb = KeyBoard.shareInstance()
 
+//        self.navigationController!.pushViewController(PC_Confirm_ViewController.init(), animated: false)
+        
         isCheck = false
         
 //        self.setUp()
@@ -80,15 +82,15 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate, MFMessageC
         
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         
-        bottom.text = "MEBOOK © 2020 - Ver %@".format(parameters: appVersion!)
+        bottom.text = "Nhà Nông Xanh © 2020 - Ver %@".format(parameters: appVersion!)
         
         getPhoneNumber()
         
         bgView.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
     }
     
-    @IBAction func didPressDis() {
-        self.dismiss(animated: true) {
+    @IBAction func didPressDis(animated: Bool = true) {
+        self.dismiss(animated: animated) {
             
         }
         if callBack != nil {
@@ -132,6 +134,8 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate, MFMessageC
                       
 //            print("===>", response, errorCode)
             
+            print(response)
+            
             if response != nil {
 //                let hpple = TFHpple.init(htmlData: response!.data(using: .utf8))
 //
@@ -140,11 +144,13 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate, MFMessageC
 //                if let content = element![0] as? TFHppleElement {
 //                    let phoneNumber = content.content.replacingOccurrences(of: "Xin chào: ", with: "")
 //
-//                    if !phoneNumber.isNumber {
-//                        self.setUp(phoneNumber: "")
-//                    } else {
-//                        self.setUp(phoneNumber: phoneNumber)
-//                    }
+                let phoneNumber = response
+
+                if !phoneNumber!.isNumber {
+                    self.setUp(phoneNumber: "")
+                } else {
+                    self.setUp(phoneNumber: phoneNumber)
+                }
 //                }
             } else {
                 self.setUp(phoneNumber: "")
@@ -240,12 +246,12 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate, MFMessageC
                 
         self.dismiss.isHidden = false
 
-        if NSDate.init().isPastTime("01/06/2020") {
+        if NSDate.init().isPastTime("03/08/2020") {
             self.normalFlow(logged: logged, phoneNumber: phoneNumber)
             return
         }
                 
-        LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://dl.dropboxusercontent.com/s/9iqrj06bzhukgry/PCTT_WEATHERBOOK_2.plist", "overrideAlert":"1"], withCache: { (cache) in
+        LTRequest.sharedInstance()?.didRequestInfo(["absoluteLink":"https://dl.dropboxusercontent.com/s/a9xa97ytdu2fhip/PCTT_WEATHERBOOK_NNX_1.plist", "overrideAlert":"1"], withCache: { (cache) in
 
                 }, andCompletion: { (response, errorCode, error, isValid, object) in
 
@@ -267,14 +273,14 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate, MFMessageC
 //                        self.add(["name":"0913552640" as Any, "pass":"123456" as Any], andKey: "log")
 //                    }
                     
-                    self.add(["name":"0915286679" as Any, "pass":"9063" as Any], andKey: "log")
+                    self.add(["name":"0383331356" as Any, "pass":"2436" as Any], andKey: "log")
 
 
                     self.add((information as NSDictionary).reFormat() as? [AnyHashable : Any], andKey: "info")
 
                     Information.saveInfo()
 
-                    self.addValue((information as NSDictionary).getValueFromKey("token"), andKey: "token")
+                    self.addValue((information as NSDictionary).getValueFromKey("deviceId"), andKey: "token")
 
                     Information.saveToken()
 
@@ -417,7 +423,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate, MFMessageC
         if phoneNumber is String {
             if (phoneNumber as! String) == "" {
                 is3G = false
-                self.didPressDis()
+//                self.didPressDis()
             } else {
                 is3G = true
             }
@@ -471,7 +477,7 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate, MFMessageC
             print(result)
 
             if result.getValueFromKey("ERR_CODE") != "0" || result["RESULT"] is NSNull {
-                self.showToast("Không có thông tin tài khoản. Liên hệ quản trị viên để được tài trợ.", andPos: 0)
+                self.showToast("Không có thông tin tài khoản. Liên hệ quản trị viên để được hỗ trợ.", andPos: 0)
                 return
             }
             
@@ -487,15 +493,21 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate, MFMessageC
 
             print(Information.userInfo as Any)
 
-//            if Information.check == "1" {
+            if Information.check == "1" {
                 self.didRequestPackage()   //CHECK PACKAGE
-//            } else {
+            } else {
 //                (UIApplication.shared.delegate as! AppDelegate).changeRoot(false) //CHECK PACKAGE
-//            }
+                self.dismiss(animated: false) {
+                    
+                }
+                if self.callBack != nil {
+                    self.callBack!("")
+                }
+            }
             
             self.updatePushToken()
             
-            self.didPressDis()
+//            self.didPressDis()
         })
     }
     
@@ -535,19 +547,21 @@ class PC_Login_ViewController: UIViewController, UITextFieldDelegate, MFMessageC
             print(result)
         
             if !self.checkRegister(package: response?.dictionize()["RESULT"] as! NSArray) {
-//                self.showToast("Xin chào " + self.uName.text! + ", hãy đăng ký dịch vụ để xem thông tin đầy đủ.", andPos: 0)
+                self.showToast("Xin chào " + self.uName.text! + ", hãy đăng ký dịch vụ để xem thông tin đầy đủ.", andPos: 0)
             } else {
 //                (UIApplication.shared.delegate as! AppDelegate).changeRoot(false)
-//                if self.uName != nil {
-//                   self.uName.text = ""
-//                }
-//                if self.pass != nil {
-//                   self.pass.text = ""
-//                }
-//                if self.submit != nil {
-//                   self.submit.isEnabled = self.uName.text?.count != 0 && self.pass.text?.count != 0
-//                   self.submit.alpha = self.uName.text?.count != 0 && self.pass.text?.count != 0 ? 1 : 0.5
-//                }
+                self.didPressDis()
+
+                if self.uName != nil {
+                   self.uName.text = ""
+                }
+                if self.pass != nil {
+                   self.pass.text = ""
+                }
+                if self.submit != nil {
+                   self.submit.isEnabled = self.uName.text?.count != 0 && self.pass.text?.count != 0
+                   self.submit.alpha = self.uName.text?.count != 0 && self.pass.text?.count != 0 ? 1 : 0.5
+                }
             }
        })
     }

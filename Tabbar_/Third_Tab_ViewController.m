@@ -10,7 +10,7 @@
 
 #import "SC_Menu_ViewController.h"
 
-#import "Nhà_Nông_Xanh-Swift.h"
+#import "NNX-Swift.h"
 
 @interface Third_Tab_ViewController ()<ViewPagerDataSource, ViewPagerDelegate>
 {

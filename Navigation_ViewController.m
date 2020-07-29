@@ -12,7 +12,7 @@
 
 #import "NN_Root_ViewController.h"
 
-#import "Nhà_Nông_Xanh-Swift.h"
+#import "NNX-Swift.h"
 
 @interface Navigation_ViewController ()<UIGestureRecognizerDelegate>
 
